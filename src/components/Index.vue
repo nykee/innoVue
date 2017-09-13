@@ -2,68 +2,26 @@
   <div class="main-content ">
 
     <!--轮播-->
-    <!--<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-      &lt;!&ndash; Indicators &ndash;&gt;
-
-      <ol class="carousel-indicators">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-      </ol>
-
-      &lt;!&ndash; Wrapper for slides &ndash;&gt;
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img src="../../static/images/index/silde-banner4.jpg" alt="...">
-          <div class="carousel-caption">
-            <h3>逸动大数据</h3>
-            <p>逸动医学依托北上广及全国各地的多中心建立骨科、关节大数据！</p>
-          </div>
+    <el-carousel height="394px" indicator-position="outside" >
+      <el-carousel-item v-for="item in items" :key="item"  >
+        <div style="position: relative">
+          <img :src="item.src" alt="">
+          <h2>{{item.title}}</h2>
+          <h3>{{ item.desc }}</h3>
         </div>
-        <div class="item">
-
-          <img src="../../static/images/index/silde-banner3.jpg" alt="...">
-          <div class="carousel-caption">
-            <h3>逸动云计算</h3>
-            <p>逸动多中心上传的数据通过云计算处理大数据</p>
-          </div>
-        </div>
-        <div class="item">
-          <img src="../../static/images/index/silde-banner5.jpg" alt="...">
-          <div class="carousel-caption">
-            <h3>逸动神经网络</h3>
-            <p>建立骨科关节测试模型，数据分析更科学高效！</p>
-          </div>
-        </div>
-      </div>
-
-      &lt;!&ndash; Controls &ndash;&gt;
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>-->
-    <el-carousel >
-      <el-carousel-item v-for="item in 3" :key="item">
-        <h3>{{ item }}</h3>
-
       </el-carousel-item>
     </el-carousel>
+
+    <!--平台简介-->
     <div class=" funcZone">
-      <!--平台简介-->
-      <div id="platformIntro" class="platformIntro row">
+      <div id="platformIntro" class="platformIntro">
         <h3 >逸动云平台--安全、稳定的云平台</h3>
         <p ><router-link to="/Mcenter">依托逸动多中心架设，集云计算、云存储、网络、安全、大数据与神经网络，让骨科诊疗更快速有效</router-link></p>
       </div>
       <!--平台功能-->
       <div id="platformFunction" class="platformFunction">
-
-          <el-row  type="flex" class="row-bg functionName" justify="space-around">
-
+        <!--功能图标-->
+        <el-row  type="flex" class="row-bg functionName" justify="space-around">
               <el-col :span="6" >
                   <a id="yjs"  @click="calDetailtoggle()">
                     <div class="funcImg" ></div>
@@ -82,13 +40,12 @@
                     <div class="funcTitle" >神经网络</div>
                   </a>
               </el-col>
-
           </el-row>
 
 
         <div class="functionDetail">
           <!--云计算详情-->
-          <el-row id="calDetail" v-if="calDetailShow">
+          <el-row id="calDetail" v-if="calDetailShow" style="height:100px">
 
               <el-col :span="6">
                <span class="">云计算提供了最可靠、最安全的数据存储中心</span><s>&gt;</s>
@@ -105,7 +62,7 @@
 
           </el-row>
           <!--云存储详情-->
-          <el-row id="storeDetail"  v-if="storeDetailShow">
+          <el-row id="storeDetail"  v-if="storeDetailShow" style="height: 100px">
 
               <el-col :span="8"><span>存储管理自动化、智能化，所有的存储资源被整合到一起</span><s>&gt;</s></el-col>
               <el-col :span="8"><span>提高存储效率、提高了存储空间的利用率，同时具备负载均衡、故障冗余功能</span><s>&gt;</s></el-col>
@@ -113,7 +70,7 @@
 
           </el-row>
           <!--神经网络详情-->
-          <el-row id="neuralDetail " v-if="neuralDetailShow">
+          <el-row id="neuralDetail " v-if="neuralDetailShow" style="height: 100px">
 
               <el-col :span="8"><span>自学习功能</span><s>&gt;</s></el-col>
               <el-col :span="8"><span>联想存储功能</span><s>&gt;</s></el-col>
@@ -123,97 +80,6 @@
         </div>
       </div>
       <!--平台解决方案-->
-      <!--<div id="platformSolution" class="platformSolution" >-->
-      <!--<div class="row platformSolutionDesc">-->
-        <!--<h3>与逸动医疗其他产品联动，给予客户不同的解决方案！</h3>-->
-      <!--</div>-->
-      <!--<div class="slide-container">-->
-        <!--<div class="slide-body">-->
-          <!--<ul class="slide-content row">-->
-            <!--<li class="    slide-items">-->
-              <!--<a href="javascript:void 0">-->
-                <!--<img  class="itemBG" src="/static/images/index/slideBG1.jpg" alt="">-->
-                <!--<div class="mask">-->
-                  <!--<div class="bg"></div>-->
-                  <!--<div class="content">-->
-                    <!--<div class="item-img-panel">-->
-                      <!--<img  class="item-img" src="" alt="">-->
-                      <!--<img  class="item-img-hover" src="" alt="">-->
-                    <!--</div>-->
-                    <!--<p class="line-panel">-->
-                      <!--<i class="item-line"></i>-->
-                    <!--</p>-->
-                    <!--<h3 class="item-title">运动医学解决方案</h3>-->
-                    <!--<p class="item-desc">运动医学解决方案描述运动医学解决方案描述运动医学解决方案描述</p>-->
-                    <!--<span class="item-link">查看详情</span>-->
-                  <!--</div>-->
-                <!--</div>-->
-              <!--</a>-->
-            <!--</li>-->
-            <!--<li  class="    slide-items">-->
-              <!--<a href="javascript:void 0">-->
-                <!--<img class="itemBG" src="/static/images/index/slideBG2.jpg" alt="">-->
-                <!--<div class="mask">-->
-                  <!--<div class="bg"></div>-->
-                  <!--<div class="content">-->
-                    <!--<div class="item-img-panel">-->
-                      <!--<img  class="item-img" src="" alt="">-->
-                      <!--<img  class="item-img-hover" src="" alt="">-->
-                    <!--</div>-->
-                    <!--<p class="line-panel">-->
-                      <!--<i class="item-line"></i>-->
-                    <!--</p>-->
-                    <!--<h3 class="item-title">骨科影像学解决方案</h3>-->
-                    <!--<p class="item-desc">运动医学解决方案描述运动医学解决方案描述运动医学解决方案描述</p>-->
-                    <!--<span class="item-link">查看详情</span>-->
-                  <!--</div>-->
-                <!--</div>-->
-              <!--</a>-->
-            <!--</li>-->
-            <!--<li class="    slide-items">-->
-              <!--<a href="javascript:void 0">-->
-                <!--<img class="itemBG" src="/static/images/index/slideBG3.jpg" alt="">-->
-                <!--<div class="mask">-->
-                  <!--<div class="bg"></div>-->
-                  <!--<div class="content">-->
-                    <!--<div class="item-img-panel">-->
-                      <!--<img  class="item-img" src="" alt="">-->
-                      <!--<img  class="item-img-hover" src="" alt="">-->
-                    <!--</div>-->
-                    <!--<p class="line-panel">-->
-                      <!--<i class="item-line"></i>-->
-                    <!--</p>-->
-                    <!--<h3 class="item-title">数字导航解决方案</h3>-->
-                    <!--<p class="item-desc">运动医学解决方案描述运动医学解决方案描述运动医学解决方案描述</p>-->
-                    <!--<span class="item-link">查看详情</span>-->
-                  <!--</div>-->
-                <!--</div>-->
-              <!--</a>-->
-            <!--</li>-->
-            <!--<li class="    slide-items">-->
-              <!--<a href="javascript:void 0">-->
-                <!--<img class="itemBG img-responsive" src=" /static/images/index/slideBG4.jpg" alt="">-->
-                <!--<div class="mask">-->
-                  <!--<div class="bg"></div>-->
-                  <!--<div class="content">-->
-                    <!--<div class="item-img-panel">-->
-                      <!--<img  class="item-img" src="" alt="">-->
-                      <!--<img  class="item-img-hover" src="" alt="">-->
-                    <!--</div>-->
-                    <!--<p class="line-panel">-->
-                      <!--<i class="item-line"></i>-->
-                    <!--</p>-->
-                    <!--<h3 class="item-title">医疗云平台解决方案</h3>-->
-                    <!--<p class="item-desc">运动医学解决方案描述运动医学解决方案描述运动医学解决方案描述</p>-->
-                    <!--<span class="item-link">查看详情</span>-->
-                  <!--</div>-->
-                <!--</div>-->
-              <!--</a>-->
-            <!--</li>-->
-          <!--</ul>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
       <!--平台目标市场-->
       <div id="market"  class="market">
         <div class="marketDesc">
@@ -265,16 +131,19 @@
       <div class="line"></div>
       <!--逸动多中心显示chart-->
       <div id="map" >
-        <el-row justify="center" type="flex">
+        <el-row justify="center" type="flex" class="row-bg">
 
-         <el-col :span="10" >
+         <el-col :span="6">
            <h3 >逸动云分布全国的骨科中心--数据更可靠</h3>
          </el-col>
-          <el-col :span="24">
-            <div id="chart-container"   style="height:500px"></div>
-          </el-col>
-
         </el-row>
+        <el-row>
+          <el-col :span="24">
+            <div id="chart-container"   style="width:500px;height:500px"></div>
+          </el-col>
+        </el-row>
+
+
       </div>
       <!--立刻注册按钮及点击查看多中心按钮-->
       <el-row id="regNowRow"  type="flex" justify="center">
@@ -291,10 +160,17 @@
 </template>
 
 <script>
+  import echarts from 'echarts';
+  import china from 'echarts/map/json/china.json';
     export default {
         data(){
 
           return {
+            items:[
+              {title:"逸动大数据",src:"/static/images/index/silde-banner3.jpg",desc:"逸动依托全国各地的多中心建立骨科、关节大数据！"},
+              {title:"逸动云计算",src:"/static/images/index/silde-banner4.jpg",desc:"逸动多中心上传的数据通过云计算处理大数据"},
+              {title:"逸动神经网络",src:"/static/images/index/silde-banner5.jpg",desc:"建立骨科关节测试模型，数据分析更科学高效！"},
+              ],
             calDetailShow:true,
             storeDetailShow:false,
             neuralDetailShow:false,
@@ -303,11 +179,6 @@
         },
         methods: {
           calDetailtoggle(){
-//            this.calDetailShow=(this.calDetailShow?(!this.calDetailShow):this.calDetailShow);
-//            this.storeDetailShow=(this.storeDetailShow?(!this.storeDetailShow):this.storeDetailShow);;
-//            this.neuralDetailShow=(this.neuralDetailShow?(!this.neuralDetailShow):this.neuralDetailShow);;
-
-
             if(this.calDetailShow){return 0}
             else {
               this.calDetailShow = !this.calDetailShow;
@@ -333,34 +204,152 @@
             }
           }
 
-
         },
         created: function () {
 
         },
+      mounted(){
+
+        let chart = echarts.init(document.getElementById('chart-container'));
+        echarts.registerMap('china', china);
+
+        let option = {
+          /*地图用到的数据，Object形式*/
+          series: [
+            {
+              name: '逸动多中心分布',
+              type: 'map',
+              mapType: 'china',
+              hoverable:false,//鼠标经过高亮
+              mapLocation: {
+                x: 'center',
+                y: 'center',
+                // height: 600
+              },
+
+              selectedMode: false,
+              itemStyle:{
+                normal:{
+                  borderColor:'rgba(100,149,237,1)',
+                  borderWidth:0.5,
+                  areaStyle:{
+                    color: '#1b1b1b'
+                  }
+                }
+              },
+
+
+              data: [
+
+
+
+
+              ],
+              /*地图标注点*/
+              markPoint: {
+//                symbol:'emptyCircle',
+
+                show: true,
+                itemStyle: {
+                  normal: {
+                    color: '#00c1de'
+                  }
+                },
+                effect:{
+                  show: true,
+                  type: 'scale',
+                  loop: true,
+                  period: 15,
+                  scaleSize : 2,
+                  bounceDistance: 10,
+                  color : null,
+                  shadowColor : null,
+                  shadowBlur : 0
+
+                },
+                data: [
+                  {
+                    name: '北京',
+                    coord:[116.46, 39.92]
+
+                  },
+                  {
+                    name: '上海',
+                  coord:[121.4648, 31.2891]
+                  },
+                  {
+                    name:'广州',
+                    coord:[113.27, 23.13]
+                  },
+                  {
+                    name:'合肥',
+                    coord:[117.27,31.86]
+                  },
+                  {
+                    name:'武汉',
+                    coord:[114.31,30.52]
+                  },
+                  {
+                    name:'长沙',
+                    coord:[113.00,28.21]
+                  },
+                  {
+                    name:'贵阳',
+                    coord:[106.71,26.57]
+                  },
+                  {
+                    name:'成都',
+                    coord:[104.07,30.67]
+                  },
+                  {
+                    name:'长春',
+                    coord:[125.35,43.88]
+                  },
+                  {
+                    name:'济南',
+                    coord:[116.98,36.67]
+                  }
+                ],
+              },
+
+
+
+            }
+          ]
+
+        };
+        chart.setOption(option,true);
+      },
         components: {}
     }
 </script>
 <style>
 
   .el-carousel__item h3 {
-    color: #475669;
-    font-size: 18px;
-    opacity: 0.75;
-    line-height: 300px;
+    color: #fff;
+    font-size: 14px;
+    opacity: 0.95;
+    line-height: 20px;
     margin: 0;
+    position: fixed;
+    bottom: 10%;
+    right: 36%;
+  }
+  .el-carousel__item h2 {
+    color: #fff;
+    font-size: 18px;
+    opacity: 0.95;
+    line-height: 30px;
+    margin: 0;
+    position: fixed;
+    bottom: 17%;
+    right: 45%;
   }
 
-  .el-carousel__item:nth-child(0) {
-    background:url("/static/images/index/silde-banner3.jpg") no-repeat;
+  .el-carousel__item img{
+    height: 395px;
   }
-
-  .el-carousel__item:nth-child(1) {
-    background:url("/static/images/index/silde-banner4.jpg") no-repeat;
-  }
-  .el-carousel__item:nth-child(2) {
-    background:url("/static/images/index/silde-banner5.jpg") no-repeat;
-  }
+  #yjs,#sjwl,#ycc{cursor: pointer}
 
 
   .platformIntro p a,#platformFunction a{color:#000}
@@ -370,6 +359,8 @@
   .myActive{color:#00C1DE;text-decoration: none}
   .funcTitle{
     padding-left:20px;}
+  .functionDetail{
+    margin-top:10px;}
   .functionDetail>div{
     background-color: #F5F5F6;
     padding: 40px;
@@ -394,12 +385,7 @@
     top: 25%;
     right: 1%;
   }
-  .addBG{
-    background-color:#fff;
-    /*border:1px solid transparent;*/
-    box-shadow:0 0 8px 0 rgba(0,0,0,.15);
-    /*padding: 1px;*/
-  }
+
 
   .funcImg{
     width: 80px;
@@ -421,9 +407,6 @@
   .platformFunction{
     margin-top:40px;
   }
-  .platformSolution{
-    margin-top:50px;
-  }
 
   #platformFunction ul li a:hover{
     color:#00C1DE !important;text-decoration: none !important;
@@ -433,101 +416,13 @@
     height: 368px;
     padding: 0 !important;
   }
-  .itemBG{height: 100%;width: 100%}
-  .bg{
-    background: #161A1D;
-    opacity: 0.5;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top:0;
-    bottom: 0;
-  }
-  .mask{
-    position: absolute;
-    left: 0;
-    right: 0;
-    top:0;
-    bottom: 0;
-  }
-  .content{
-    position: absolute;
-    left: 0;
-    right: 0;
-    top:160px;
-    bottom: 0;
-  }
-  .slide-items{
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-  }
+
   .slide-items a{display: block}
   .market{
     margin-top: 50px;
   }
-  .item-desc,.item-link{
-    opacity: 0;
-  }
-  .item-title{
-    color: #fff;
-    font-size: 22px;
-    line-height:24px;
-    margin: 0;
-    padding: 0;
-    margin-top:24px;
-    font-weight: bold;
-  }
-  .item-desc{
-    font-size: 14px;
-    color: #fff;
-    text-align: center;
-    margin-top:30px;
-    padding: 0 32px;
-    line-height:24px;
-    height: 72px;
-  }
-  .item-link{
-    display: inline-block;
-    border: 1px solid #fff;
-    width: 120px;
-    height: 36px;
-    line-height: 36px;
-    font-size: 14px;
-    text-decoration: none;
-    margin-top:62px;
-    color: #fff;
-  }
 
-  @keyframes MoveDivUp {
-    0%{
-      top:160px;
 
-    }
-    20%{
-      top:148px;
-    }
-    40%{
-      top:136px;
-    }
-    60%{
-      top:124px;
-    }
-    80%{
-      top:112px
-    }
-    100%{
-      top:100px;
-    }
-  }
-  .MoveDivUp{
-    -webkit-animation-name: MoveDivUp;
-    -webkit-animation-duration: 1s;
-  }
-  .whiteBG{
-    background: #fff !important;
-    color:#1AC8E1 !important
-  }
   .market img{
     width: 50px;
     height: 50px;
@@ -550,52 +445,8 @@
   .marketTitle:hover{
     color:#00C1DE !important;
   }
-  .myTransform{
-    -webkit-transform: rotateY(360deg);
-    -moz-transform:rotateY(360deg);
-    -o-transform:rotateY(360deg) ;
-  }
-  .platformSolutionDesc,.marketDesc{
-    margin-bottom:2%;
-  }
-  @media screen and (max-width: 768px) {
-    .mask{
-      height: 280px;
-    }
-    .content{
-      top:100px;
-    }
-    .item-title{
-      font-size: 18px;
-    }
-    .item-desc{
-      margin-top:20px;
-    }
-    .item-link{
-      margin-top:30px;
-    }
-    .itemBG{
-      height: 280px;
-    }
-  }
 
-  @media screen and (min-width: 320px) and (max-width: 414px ) {
-    .carousel-caption h3{
-      margin-bottom:0 !important;
-      font-size: 20px !important;
-    }
-    .carousel-caption p{
-      margin: 0 !important;
-    }
 
-    .itemBG{
-      height: 280px !important;
-    }
-    .slide-body li{
-      height: auto;
-      margin-top: 5px;
-    }
-  }
   .line{
     border-bottom: 1px solid #E1E1E1;
     margin-bottom:10px;
@@ -604,9 +455,7 @@
     margin:0 auto;
 
   }
-  .height300{
-    height: 300px !important;
-  }
+
   #map{
     margin-bottom:20px;
     background: #F2F3F3;

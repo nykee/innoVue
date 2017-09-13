@@ -18,17 +18,15 @@ export default new Router({
       path:'/Mcenter',
       name:'Mcenter',
       component:Mcenter,
-      children:[
-        {
-          path:'GZJQ',
-          component:GZJQ
-        }
-      ]
+
     },
     {
       path:'/Manage',
       name:'Manage',
       component:Manage
+    },{
+      path:'GZJQ',
+      component:GZJQ
     }
   ]
 })

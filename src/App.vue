@@ -71,7 +71,6 @@ export default {
 </script>
 
 <style>
-  /*li{float: left}*/
 
 body, button, select, textarea, input, label, option, fieldset, legend{font-family: 微软雅黑E\8F6F\96C5\9ED1,Tahoma,Verdana;font-size: 12px;line-height: 18px;color: #444;}
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, button, p, blockquote, th, td{margin: 0;padding: 0;}
@@ -105,7 +104,6 @@ footer{
 .bottomNav_title{
   font-size: 16px;
   color: #7DDEFF;
-  /*border-bottom: 1px solid #88C1DF;*/
 }
 .bottomNav{
   padding-top:10px;

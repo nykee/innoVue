@@ -1,14 +1,14 @@
 <template>
 
-  <div class="container" id="main-container">
-    <div class="row">
-      <h1 id="title" class=" title col-lg-12 col-md-12 col-sm-12 col-xs-12" >逸动医疗多中心展示</h1>
-      <div class="defaultInfo col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <div  id="main-container">
+    <el-row >
+      <h1 id="title" class=" title " >逸动医疗多中心展示</h1>
+      <div class="defaultInfo ">
         <h3  class="mCenterDisc">逸动医疗致力于关节功能多中心的建立，在北京上海广州香港等地均建立了多中心</h3>
       </div>
-    </div>
+    </el-row>
     <div class="row">
-      <div class="col-lg-12" id="hosSel">
+      <div class="" id="hosSel">
         <i>请选择你需要查看数据的医院或机构：</i>
         <select name="hSelect" id="hospitalSel">
           <option value="301" selected="selected">解放军301总医院</option>
@@ -17,21 +17,19 @@
           <option value="SHHS">华山医院</option>
           <option value="D9RM">上海市第九人民医院</option>
           <option value="D6RM">上海市第六人民医院</option>
-          <!--<option value="SHTY">上海体育学院</option>
-          <option value="SHJT">上海交通大学</option>-->
           <option value="GZJQ">广州军区总医院</option>
           <option value="HNLG">华南理工大学</option>
           <option value="XGZW">香港威尔士亲王医院</option>
         </select>
-        <span id="gotoBtn" class="btn btn-primary">前往</span>
+        <el-button type="primary" id="gotoBtn" >前往</el-button>
         <b>或者点击下方的医院名称</b>
       </div>
     </div>
     <div class="row">
-      <div id="chart-container" class="col-xs-12 col-sm-12 col-md-6 col-lg-6"  style="height:700px"></div>
-      <div id="mCenterInfo" class="col-xs-12 col-sm-12 col-md-6  col-lg-6">
+      <div id="chart-container" class=""  style="height:700px"></div>
+      <div id="mCenterInfo" class="">
 
-        <div class="beijingInfo " >
+        <div class="beijingInfo ">
           <b>逸动医疗北京中心</b>
           <ul>
             <li>
@@ -57,12 +55,6 @@
             <li>
               <a href="./mCenterDetail.html?hospital=D6RM"><img src="/static/images/mCenter/6rm.jpg" alt="上海市第六人民医院"><s>上海市第六人民医院</s></a>
             </li>
-            <!--<li>
-                <a href="./mCenterDetail.html?hospital=SHTY"><img src="../images/mCenter/shty.jpg" alt="上海体育学院"><s>上海体育学院</s></a>
-            </li>
-            <li>
-                <a href="./mCenterDetail.html?hospital=SHJT"><img src="../images/mCenter/shjt.jpg" alt="上海交通大学"><s>上海交通大学</s></a>
-            </li>-->
           </ul>
         </div>
         <div class="guangdongInfo">
@@ -82,6 +74,7 @@
       </div>
     </div>
   </div>
+
 </template>
 
 <script>
@@ -97,5 +90,86 @@
     }
 </script>
 <style>
+  html{height:100%}
+  body{height:100%}
+
+  #main-container{
+    height: 800px;
+    width: auto;
+    margin: 0 auto;
+  }
+  #chart-container{
+    margin-top: 20%;
+    margin-left:2%;
+    float: left;
+
+  }
+
+  #mCenterInfo{
+    margin-top: 3%;
+    margin-left:3%;
+    float: left;
+    width: 30%;
+    height: 70%;
+  }
+  #mCenterInfo h1{
+    margin: 5%;
+    color:#027ACE;
+  }
+  #mCenterInfo img{
+    width: 50px;
+    height: 50px;
+  }
+  #mCenterInfo s{
+    text-decoration: none;
+    margin-left:2%;
+    font-family: '微软雅黑', serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000 ;
+  }
+  #mCenterInfo b{
+    font-size: 1.5em;
+    color:#027bbb;
+    margin:5%;
+    display: block;
+  }
+  #mCenterInfo ul{
+    list-style: none;
+    margin-top:5%;
+    margin-left:5%;
+  }
+  #mCenterInfo ul li{
+    margin-top:3%;
+  }
+  .mCenterDisc{
+    margin-top: 2%;
+  }
+  .beijingInfo,.shanghaiInfo,.guangdongInfo{
+    border:1px solid transparent ;
+    border-bottom:1px solid #E8EAEC;
+
+
+  }
+  .defaultInfo{
+    border-top:1px solid #E8EAEC;
+    text-align: center
+  }
+  .nav_nav ul li,.bottom ul li,.nav_nav ul,.bottom ul{
+    float: left;
+    overflow: hidden
+  }
+  .title{  text-align: center;}
+
+
+  #hosSel {
+    text-align: center;
+  }
+
+  .beijingInfo>ul>li>a>s:hover,.shanghaiInfo>ul>li>a>s:hover,.guangdongInfo>ul>li>a>s:hover{
+    color:#00C1DE !important
+  }
+
+
 
 </style>
