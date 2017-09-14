@@ -1,18 +1,22 @@
 <template>
   <div id="app">
-    <el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-      <el-menu-item index="1"><router-link to="/">       首页   </router-link></el-menu-item>
-      <el-menu-item index="2"><router-link to="/Mcenter">多中心 </router-link></el-menu-item>
-      <el-menu-item index="3"><router-link to="/Manage">管理中心</router-link></el-menu-item>
-      <el-menu-item index="4"><router-link to="/Login">   登录  </router-link></el-menu-item>
-      <el-menu-item index="5"><router-link to="/Register">注册  </router-link></el-menu-item>
+    <div id="navBar" v-if="!isLoginPage">
+      <el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+        <el-menu-item index="1"><router-link to="/">       首页   </router-link></el-menu-item>
+        <el-menu-item index="2"><router-link to="/Mcenter">多中心 </router-link></el-menu-item>
+        <el-menu-item index="3"><router-link to="/Manage">管理中心</router-link></el-menu-item>
+        <el-menu-item index="4"><router-link to="/Login">   登录  </router-link></el-menu-item>
+        <el-menu-item index="5"><router-link to="/Register">注册  </router-link></el-menu-item>
 
-    </el-menu>
+      </el-menu>
+    </div>
+
+
 
     <router-view></router-view>
 
 
-    <footer >
+    <footer v-if="!isLoginPage">
       <el-row class="row-bg bottomNav"  type="flex"  justify="space-around">
         <el-col :span="6" class="fastEntrance ">
           <ul>
@@ -63,15 +67,26 @@
 export default {
   data(){
     return {
-      activeIndex: '1'
+      activeIndex: '1',
+      isLoginPage:false
     }
   },
   methods:{
     handleSelect(key, keyPath) {
-      console.log(key, keyPath);
+//      console.log(key, keyPath);
     }
   },
-  name: 'app'
+  mounted:function () {
+    let path = this.$route.path;
+    if(String(path)==="Login"){
+      this.isLoginPage =true;
+    }
+  },
+
+
+
+
+
 }
 </script>
 
