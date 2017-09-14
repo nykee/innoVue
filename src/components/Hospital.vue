@@ -1,12 +1,14 @@
 <template>
-  <h3>广州军区医院详情</h3>
+  <div>
+
+  </div>
 </template>
 
 <script>
     export default {
-        /*data() {
+        data() {
 
-        },*/
+        },
         methods: {},
         created: function () {
 

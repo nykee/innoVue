@@ -66,6 +66,11 @@ export default {
       activeIndex: '1'
     }
   },
+  methods:{
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
+    }
+  },
   name: 'app'
 }
 </script>

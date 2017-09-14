@@ -3,8 +3,7 @@ import Router from 'vue-router'
 import Mcenter from '../components/Mcenter.vue'
 import Manage from '../components/Manage.vue'
 import Index from '../components/Index.vue'
-import GZJQ from '../components/MCenter/GZJQ.vue'
-
+import Hospital from '../components/Hospital.vue'
 Vue.use(Router);
 
 export default new Router({
@@ -24,9 +23,11 @@ export default new Router({
       path:'/Manage',
       name:'Manage',
       component:Manage
-    },{
-      path:'GZJQ',
-      component:GZJQ
+    },
+    {
+      path:'/Hospital/:id',
+      name:"Hospital",
+      component:Hospital
     }
   ]
 })

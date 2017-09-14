@@ -61,7 +61,7 @@
           <b>逸动医疗广东中心</b>
           <ul>
             <li>
-              <router-link to="/Mcenter/GZJQ"><img src="/static/images/mCenter/gzjy.png" alt=""><s>广州军区总医院</s></router-link>
+              <router-link to="/GZJQ"><img src="/static/images/mCenter/gzjy.png" alt=""><s>广州军区总医院</s></router-link>
             </li>
             <li>
               <a href="./mCenterDetail.html?hospital=HNLG"><img src="/static/images/mCenter/hnlg.jpg" alt=""><s>华南理工大学</s></a>
@@ -165,6 +165,7 @@
   #hosSel {
     text-align: center;
   }
+  #hosSel i{font-style: normal}
 
   .beijingInfo>ul>li>a>s:hover,.shanghaiInfo>ul>li>a>s:hover,.guangdongInfo>ul>li>a>s:hover{
     color:#00C1DE !important
