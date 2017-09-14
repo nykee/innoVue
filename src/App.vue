@@ -1,14 +1,18 @@
 <template>
-  <div id="app">
-    <div id="navBar" v-if="!isLoginPage">
-      <el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-        <el-menu-item index="1"><router-link to="/">       首页   </router-link></el-menu-item>
-        <el-menu-item index="2"><router-link to="/Mcenter">多中心 </router-link></el-menu-item>
-        <el-menu-item index="3"><router-link to="/Manage">管理中心</router-link></el-menu-item>
-        <el-menu-item index="4"><router-link to="/Login">   登录  </router-link></el-menu-item>
-        <el-menu-item index="5"><router-link to="/Register">注册  </router-link></el-menu-item>
+  <div id="app" >
+    <div class="navBar" v-show="!isLoginPage">
+      <div class="clearfix">
+        <h2 class="fl pic"><router-link to="/"><img src="../static/images/inno1.png" alt=""></router-link></h2>
+        <el-menu  :default-active="activeIndex" class="fl menu" mode="horizontal" @select="handleSelect">
+          <el-menu-item index="1"><router-link to="/">       首页   </router-link></el-menu-item>
+          <el-menu-item index="2"><router-link to="/Mcenter">多中心 </router-link></el-menu-item>
+          <el-menu-item index="3"><router-link to="/Manage">管理中心</router-link></el-menu-item>
+          <!--<el-menu-item index="5"><router-link to="/Register">注册  </router-link></el-menu-item>-->
 
-      </el-menu>
+        </el-menu>
+        <div class="fr"><router-link to="/Login">   登录  </router-link></div>
+      </div>
+
     </div>
 
 
@@ -16,7 +20,7 @@
     <router-view></router-view>
 
 
-    <footer v-if="!isLoginPage">
+    <footer v-show="!isLoginPage">
       <el-row class="row-bg bottomNav"  type="flex"  justify="space-around">
         <el-col :span="6" class="fastEntrance ">
           <ul>
@@ -74,14 +78,20 @@ export default {
   methods:{
     handleSelect(key, keyPath) {
 //      console.log(key, keyPath);
+    },
+    chkIsLoginPage(){
+      let path = this.$route.path;
+      if(String(path)==="/Login"){
+        this.isLoginPage =true;
+      }
     }
   },
   mounted:function () {
-    let path = this.$route.path;
-    if(String(path)==="Login"){
-      this.isLoginPage =true;
-    }
+    this.chkIsLoginPage();
   },
+  watch:{
+    '$route':'chkIsLoginPage'
+  }
 
 
 
@@ -107,7 +117,12 @@ li{list-style-type:none;}
   color:#fff !important;
 
 }
-
+.fl{
+  float: left;}
+.fr{
+  float: right;}
+.clearfix{*zoom:1}
+.clearfix:after{display:block;visibility:hidden;clear:both;height:0;content:'.';font-size:0}
 
 /*页面尾部通用样式*/
 footer{
@@ -136,7 +151,12 @@ footer{
 }
 .bottomNav li a{color:#A0DEFF !important}
 
-
+.navBar,.menu{
+  background: #79cace;
+}
+.pic{
+  margin-right:30px;
+}
 
 
 </style>
