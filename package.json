@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
-    "echarts": "^3.7.1",
     "element-ui": "latest",
     "vue": "^2.4.2",
+    "vue-echarts": "^2.4.1",
     "vue-router": "^2.7.0"
   },
   "devDependencies": {
