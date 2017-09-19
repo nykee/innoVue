@@ -3,10 +3,10 @@
 
       <el-form ref="form"  class="signin" label-width="80px">
         <el-form-item label="用户名">
-          <el-input  placeholder="请输入用户名"></el-input>
+          <el-input  placeholder="请输入用户名" v-model="username"></el-input>
         </el-form-item>
         <el-form-item label="密码">
-          <el-input  placeholder="请输入密码"></el-input>
+          <el-input  placeholder="请输入密码" v-model="password"></el-input>
         </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="onSubmit">立即登录</el-button>
@@ -18,13 +18,39 @@
 </template>
 
 <script>
+  import axios from 'axios';
     export default {
         data() {
-            return {}
+            return {
+              username:"",
+              password:""
+            }
         },
         methods: {
           onSubmit() {
             console.log('submit!');
+            console.log(this.password);
+            console.log(this.username);
+            let username = this.username;
+            let password = this.password;
+
+            /*ajax请求后端登录验证*/
+            axios.post('/user/checkLogin')
+              .then(function (res) {
+                console.log(res);
+                if(res.code===200){
+                  //请求成功跳转至默认页
+                  this.$router.push({path: '/'});
+                }
+                else if(res.code===100){
+                 //请求失败
+                 console.log("err");
+                }
+              }).catch(function (err) {
+                console.log(err);
+            });
+
+
           }
         },
         created: function () {
@@ -54,11 +80,11 @@
     background-size: cover;
     height: 900px;
   }*/
-  html{
+  /*html{
     background: url('../../static/images/Index_bg2.jpg') no-repeat;
 
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-  }
+  }*/
 </style>
