@@ -136,9 +136,9 @@
          <el-col :span="6">
            <h3 >逸动云分布全国的骨科中心--数据更可靠</h3>
          </el-col>
-        </el-row>
-        <el-row>
-          <el-col :span="24">
+        </el-row >
+        <el-row justify="center" type="flex" class="row-bg">
+          <el-col :span="12">
               <!--地图chart,组件引入-->
             <MapChart></MapChart>
           </el-col>

@@ -60,5 +60,32 @@
     }
 </script>
 <style>
+  /*页面尾部通用样式*/
+  footer{
+    width:100%;
+    background:#027bbb;
+    padding-bottom:30px;
+    float: left;
+    color:#A0DEFF;
+  }
+  .LogoAndCR{
+    border-top:1px dotted #4B5054;
+    padding-top:10px;
+  }
+  .bottomNav_title{
+    font-size: 16px;
+    color: #7DDEFF;
+  }
+  .bottomNav{
+    padding-top:10px;
+  }
+  .bottomNav li{
+    margin-top:5px;
+  }
+  .bottomNav li a:hover{
+    color:#fff !important;
+  }
+  .bottomNav li a{color:#A0DEFF !important}
+
 
 </style>

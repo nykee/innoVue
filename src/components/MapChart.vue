@@ -1,13 +1,18 @@
 <template>
-  <chart :options="map" class="chart"></chart>
+
+   <div id="chart" style="height: 500px;width: 500px">
+   </div>
+
 </template>
 
 <script>
-  import ECharts from 'vue-echarts/components/ECharts.vue'
+  import  echarts from 'echarts'
+  import chinaMap from '../../static/china.json';
+  echarts.registerMap('china', chinaMap);
     export default {
         data() {
             return {
-              map:{
+              mapOption:{
                 /*地图用到的数据，Object形式*/
                 series: [
                   {
@@ -109,12 +114,15 @@
         created: function () {
 
         },
-        components: {}
+        components: {
+
+        },
+      mounted(){
+        let chart =  echarts.init(document.getElementById('chart'));
+        chart.setOption(this.mapOption);
+      }
     }
 </script>
 <style>
-  .chart{
-    width: 500px;
-    height: 500px;
-  }
+
 </style>

@@ -12,6 +12,57 @@ import Login from '../components/Login.vue'
 Vue.use(Router);
 
 export default new Router({
+  /*routes: [
+    {
+      path:'/Login',
+      name:"Login",
+      component:Login
+    },
+   {
+      path:"/main",
+     component: Index,
+     children:[
+       {
+         path:'/Mcenter',
+         name:'Mcenter',
+         component:Mcenter,
+
+       },
+       {
+         path:'/Manage',
+         name:'Manage',
+         component:Manage,
+         children:[
+           {
+             path:'SportsUpload',
+
+             component:SportsUpload
+           },
+           {
+             path:'SportsManage',
+
+             component:SportsManage
+           },
+           {
+             path:'SportsCharts',
+
+             component:SportsCharts
+           },
+           {
+             path:'SportsHotMap',
+
+             component:SportsHotMap
+           },
+         ]
+       },
+       {
+         path:'/Hospital/:id',
+         name:"Hospital",
+         component:Hospital
+       },
+     ]
+    }
+  ]*/
   routes: [
     {
 
@@ -53,6 +104,7 @@ export default new Router({
       ]
     },
     {
+
       path:'/Hospital/:id',
       name:"Hospital",
       component:Hospital

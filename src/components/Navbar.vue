@@ -41,5 +41,11 @@
     }
 </script>
 <style>
-
+  .navBar,.menu{
+    /*background: #79cace;*/
+    background: #324157;
+  }
+  .pic{
+    margin-right:30px;
+  }
 </style>

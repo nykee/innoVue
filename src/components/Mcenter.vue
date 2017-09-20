@@ -1,16 +1,16 @@
 <template>
 
-  <div  id="main-container">
+  <el-row  id="main-container">
     <el-row >
       <h1 id="title" class=" title " >逸动医疗多中心展示</h1>
       <div class="defaultInfo ">
         <h3  class="mCenterDisc">逸动医疗致力于关节功能多中心的建立，在北京上海广州香港等地均建立了多中心</h3>
       </div>
     </el-row>
-    <div class="row">
+    <div >
       <div class="" id="hosSel">
-        <i>请选择你需要查看数据的医院或机构：</i>
-        <select name="hSelect" id="hospitalSel">
+        <label for="hosSel">请选择你需要查看数据的医院或机构：</label>
+        <select name="hSelect" id="hospitalSel" v-model="Hospital">
           <option value="301" selected="selected">解放军301总医院</option>
           <option value="JST">积水潭医院</option>
           <option value="GJTY">国家体育总局</option>
@@ -21,25 +21,27 @@
           <option value="HNLG">华南理工大学</option>
           <option value="XGZW">香港威尔士亲王医院</option>
         </select>
-        <el-button type="primary" id="gotoBtn" >前往</el-button>
+        <el-button type="primary"  @click="linkToHosp">前往</el-button>
         <b>或者点击下方的医院名称</b>
       </div>
     </div>
-    <div class="row">
-      <div id="chart-container" class=""  style="height:700px"></div>
-      <div id="mCenterInfo" class="">
+    <el-row>
+      <el-col  :span="14" id="chart-container">
+        <MCmapchart></MCmapchart>
+      </el-col>
+      <el-col id="mCenterInfo"  :span="8">
 
         <div class="beijingInfo ">
           <b>逸动医疗北京中心</b>
           <ul>
             <li>
-              <a href="./mCenterDetail.html?hospital=301"><img src="/static/images/mCenter/301.png" alt="解放军301总医院"><s>解放军301总医院</s></a>
+              <router-link to="/Hospital/:301"><img src="/static/images/mCenter/301.png" alt="解放军301总医院"><s>解放军301总医院</s></router-link>
             </li>
             <li>
-              <a href="./mCenterDetail.html?hospital=JST"><img src="/static/images/mCenter/jst.png" alt="积水潭医院"><s>积水潭医院</s></a>
+              <router-link to="/Hospital/:JST"><img src="/static/images/mCenter/jst.png" alt="积水潭医院"><s>积水潭医院</s></router-link>
             </li>
             <li>
-              <a href="./mCenterDetail.html?hospital=GJTY"><img src="/static/images/mCenter/nstc.png" alt="国家体育运动总局"><s>国家体育运动总局</s></a>
+              <router-link to="/Hospital/:GJTY"><img src="/static/images/mCenter/nstc.png" alt="国家体育运动总局"><s>国家体育运动总局</s></router-link>
             </li>
           </ul>
         </div>
@@ -47,13 +49,13 @@
           <b>逸动医疗上海中心</b>
           <ul>
             <li>
-              <a href="./mCenterDetail.html?hospital=SHHS"><img src="/static/images/mCenter/hsyy.png" alt="华山医院"><s>华山医院</s></a>
+              <router-link to="/Hospital/:SHHS"><img src="/static/images/mCenter/hsyy.png" alt="华山医院"><s>华山医院</s></router-link>
             </li>
             <li>
-              <a href="./mCenterDetail.html?hospital=D9RM"><img src="/static/images/mCenter/9rm.png" alt="上海市第九人民医院"><s>上海市第九人民医院</s></a>
+              <router-link to="/Hospital/:D9RM"><img src="/static/images/mCenter/9rm.png" alt="上海市第九人民医院"><s>上海市第九人民医院</s></router-link>
             </li>
             <li>
-              <a href="./mCenterDetail.html?hospital=D6RM"><img src="/static/images/mCenter/6rm.jpg" alt="上海市第六人民医院"><s>上海市第六人民医院</s></a>
+              <router-link to="/Hospital/:D6RM"><img src="/static/images/mCenter/6rm.jpg" alt="上海市第六人民医院"><s>上海市第六人民医院</s></router-link>
             </li>
           </ul>
         </div>
@@ -64,29 +66,38 @@
               <router-link to="/Hospital/:GZJQ"><img src="/static/images/mCenter/gzjy.png" alt=""><s>广州军区总医院</s></router-link>
             </li>
             <li>
-              <a href="./mCenterDetail.html?hospital=HNLG"><img src="/static/images/mCenter/hnlg.jpg" alt=""><s>华南理工大学</s></a>
+              <router-link to="/Hospital/:HNLG"><img src="/static/images/mCenter/hnlg.jpg" alt=""><s>华南理工大学</s></router-link>
             </li>
             <li>
-              <a href="./mCenterDetail.html?hospital=XGZW"><img src="/static/images/mCenter/wales.png" alt=""><s>香港威尔士亲王医院</s></a>
+              <router-link to="/Hospital/:XGZW"><img src="/static/images/mCenter/wales.png" alt=""><s>香港威尔士亲王医院</s></router-link>
             </li>
           </ul>
         </div>
-      </div>
-    </div>
-  </div>
+      </el-col>
+    </el-row>
+  </el-row>
 
 </template>
 
 <script>
+  import MCmapchart from './MCmapchart.vue';
     export default {
-        /*data() {
-
-        },*/
-        methods: {},
+        data() {
+          return{
+            Hospital:''
+          }
+        },
+        methods: {
+          linkToHosp() {
+            this.$router.push('/Hospital/:'+this.Hospital);
+          }
+        },
         created: function () {
 
         },
-        components: {}
+        components: {
+          MCmapchart
+        }
     }
 </script>
 <style>
