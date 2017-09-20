@@ -6,12 +6,14 @@
     <router-view></router-view>
     <!--页脚-->
     <FootBar></FootBar>
+    <BackToTopBtn class="toTopBtn"></BackToTopBtn>
   </div>
 </template>
 
 <script>
   import FootBar from "./components/FootBar.vue";
   import Navbar from "./components/Navbar.vue";
+  import BackToTopBtn from './components/BackToTopBtn.vue';
 export default {
   data(){
     return {
@@ -29,7 +31,7 @@ export default {
     /*'$route':'chkIsLoginPage'*/
   },
   components:{
-    FootBar,Navbar
+    FootBar,Navbar,BackToTopBtn
   }
 
 
@@ -55,6 +57,14 @@ li{list-style-type:none;}
 .navbar-default .navbar-nav>li>a:hover{
   color:#fff !important;
 
+}
+#app{
+  position: relative;
+}
+.toTopBtn{
+  position: fixed;
+  right: 10px;
+  bottom:100px;
 }
 .loginMenu{
   margin-right:20px;
