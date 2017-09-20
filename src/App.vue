@@ -5,16 +5,17 @@
     <!--路由显示-->
     <router-view></router-view>
     <!--页脚-->
-    <Footer></Footer>
+    <FootBar></FootBar>
   </div>
 </template>
 
 <script>
-  import Footer from "./components/Footer.vue";
+  import FootBar from "./components/FootBar.vue";
   import Navbar from "./components/Navbar.vue";
 export default {
   data(){
     return {
+
 
     }
   },
@@ -28,7 +29,7 @@ export default {
     /*'$route':'chkIsLoginPage'*/
   },
   components:{
-    Footer,Navbar
+    FootBar,Navbar
   }
 
 

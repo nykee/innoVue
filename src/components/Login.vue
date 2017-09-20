@@ -35,7 +35,7 @@
             let password = this.password;
 
             /*ajax请求后端登录验证*/
-            axios.post('/user/checkLogin')
+            axios.post('/user/checkLogin',{username:username,password:password})
               .then(function (res) {
                 console.log(res);
                 if(res.code===200){

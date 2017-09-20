@@ -11,7 +11,7 @@
       <div class="" id="hosSel">
         <label for="hosSel">请选择你需要查看数据的医院或机构：</label>
         <select name="hSelect" id="hospitalSel" v-model="Hospital">
-          <option value="301" selected="selected">解放军301总医院</option>
+          <option value="301" selected>解放军301总医院</option>
           <option value="JST">积水潭医院</option>
           <option value="GJTY">国家体育总局</option>
           <option value="SHHS">华山医院</option>
