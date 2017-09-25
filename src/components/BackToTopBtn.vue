@@ -6,6 +6,7 @@
       </el-tooltip>
 
     </div>
+
   </div>
 
 </template>
@@ -14,34 +15,23 @@
     export default {
         data() {
             return {
-              isTop:true,
-              topVal:document.documentElement.scrollTop
+
             }
         },
         methods: {
           toTop(){
             window.scrollTo(0,0);
-            console.log(document.documentElement.scrollTop);
 
           },
-          chkIsTop(){
-
-            if(this.topVal>100){
-              this.isTop =false;
-            }
-          }
 
         },
         created: function () {
 
         },
         mounted() {
-          this.topVal=document.documentElement.scrollTop;
-          console.log(this.topVal);
         },
         components: {},
       watch:{
-        topVal:"chkIsTop"
 
       }
     }

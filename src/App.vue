@@ -6,7 +6,7 @@
     <router-view></router-view>
     <!--页脚-->
     <FootBar></FootBar>
-    <BackToTopBtn class="toTopBtn"></BackToTopBtn>
+    <BackToTopBtn class="toTopBtn" v-show="isShow"></BackToTopBtn>
   </div>
 </template>
 
@@ -17,18 +17,28 @@
 export default {
   data(){
     return {
+      isShow:true,
+      topVal:document.documentElement.scrollTop
 
 
     }
   },
   methods:{
+    chkIndexAndTop(){
+      let path =this.$route.path;
+      this.isShow = (path !=="/")?false:true;
+      console.log(this.topVal);
+      if(this.topVal>100){
+        this.isShow =false;
+      }
+    }
 
   },
   mounted:function () {
-    /*this.chkIsLoginPage();*/
+    this.chkIndexAndTop();
   },
   watch:{
-    /*'$route':'chkIsLoginPage'*/
+    '$route':'chkIndexAndTop'
   },
   components:{
     FootBar,Navbar,BackToTopBtn

@@ -161,7 +161,7 @@
 </template>
 
 <script>
-  import MapChart from "./MapChart.vue";
+  import MapChart from "./charts/MapChart.vue";
     export default {
         data(){
 
@@ -351,7 +351,7 @@
   }
 
   #map{
-    margin-bottom:20px;
+    margin-bottom:5px;
     background: #F2F3F3;
   }
   #regNowRow{

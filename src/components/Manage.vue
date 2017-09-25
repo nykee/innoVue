@@ -7,7 +7,7 @@
           <el-radio-button :label="true">收起</el-radio-button>
         </el-radio-group>-->
         <div class="menuBG">
-          <el-menu default-active="" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+          <el-menu default-active="1-2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-message"></i>
@@ -96,7 +96,10 @@
         },
         components: {
           SportsUpload,SportsHotMap,SportsManage,SportsCharts
-        }
+        },
+      mounted(){
+//        this.$router.push( {path: '/Manage/SportsUpload'})
+      }
     }
 </script>
 <style scoped>
