@@ -103,7 +103,7 @@
                 xAxis : [
                   {
                     type : 'category',
-                    data : [10,20,30.40],
+                    data : [10,20,20,20,20],
                     axisTick: {
                       alignWithLabel: true
                     }
@@ -128,7 +128,7 @@
             }
 
         },
-        /*父组件传递charType给子组件*/
+        /*子组件通过props属性接受父组件向下传递的数据*/
         props:["chartType"],
         methods: {
           drawChart(){

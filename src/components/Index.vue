@@ -15,8 +15,8 @@
     <!--平台简介-->
     <div class=" funcZone">
       <div id="platformIntro" class="platformIntro">
-        <h3 >逸动云平台--安全、稳定的云平台</h3>
-        <p ><router-link to="/Mcenter">依托逸动多中心架设，集云计算、云存储、网络、安全、大数据与神经网络，让骨科诊疗更快速有效</router-link></p>
+        <h3 >XX云平台--安全、稳定的云平台</h3>
+        <p ><router-link to="/Mcenter">依托XX多中心架设，集云计算、云存储、网络、安全、大数据与神经网络，让骨科诊疗更快速有效</router-link></p>
       </div>
       <!--平台功能-->
       <div id="platformFunction" class="platformFunction">
@@ -45,36 +45,36 @@
 
         <div class="functionDetail">
           <!--云计算详情-->
-          <el-row id="calDetail" v-if="calDetailShow" style="height:100px">
+          <el-row id="calDetail" v-if="calDetailShow" >
 
-              <el-col :span="6">
+              <el-col :span="6"  class="funcDescCol" >
                <span class="">云计算提供了最可靠、最安全的数据存储中心</span><s>&gt;</s>
               </el-col>
-               <el-col :span="6">
+               <el-col :span="6" class="funcDescCol">
                  <span class="">云计算对用户端的设备要求最低</span><s>&gt;</s>
                </el-col>
-               <el-col :span="6">
+               <el-col :span="6" class="funcDescCol">
                  <span>增强的计算能力</span><s>&gt;</s>
                </el-col>
-               <el-col :span="6">
+               <el-col :span="6" class="funcDescCol">
                  <span>无限的存储容量</span><s>&gt;</s>
                </el-col>
 
           </el-row>
           <!--云存储详情-->
-          <el-row id="storeDetail"  v-if="storeDetailShow" style="height: 100px">
+          <el-row id="storeDetail"  v-if="storeDetailShow" >
 
-              <el-col :span="8"><span>存储管理自动化、智能化，所有的存储资源被整合到一起</span><s>&gt;</s></el-col>
-              <el-col :span="8"><span>提高存储效率、提高了存储空间的利用率，同时具备负载均衡、故障冗余功能</span><s>&gt;</s></el-col>
-              <el-col :span="8"><span>实现规模效应和弹性扩展，降低运营成本，避免资源浪费</span><s>&gt;</s></el-col>
+              <el-col :span="8" class="funcDescCol"><span>存储管理自动化、智能化，所有的存储资源被整合到一起</span><s>&gt;</s></el-col>
+              <el-col :span="8" class="funcDescCol"><span>提高存储效率、提高了存储空间的利用率，同时具备负载均衡、故障冗余功能</span><s>&gt;</s></el-col>
+              <el-col :span="8" class="funcDescCol"><span>实现规模效应和弹性扩展，降低运营成本，避免资源浪费</span><s>&gt;</s></el-col>
 
           </el-row>
           <!--神经网络详情-->
-          <el-row id="neuralDetail " v-if="neuralDetailShow" style="height: 100px">
+          <el-row id="neuralDetail " v-if="neuralDetailShow" >
 
-              <el-col :span="8"><span>自学习功能</span><s>&gt;</s></el-col>
-              <el-col :span="8"><span>联想存储功能</span><s>&gt;</s></el-col>
-              <el-col :span="8"><span>高速寻找优化解的能力</span><s>&gt;</s></el-col>
+              <el-col :span="8" class="funcDescCol"><span>自学习功能</span><s>&gt;</s></el-col>
+              <el-col :span="8" class="funcDescCol"><span>联想存储功能</span><s>&gt;</s></el-col>
+              <el-col :span="8" class="funcDescCol"><span>高速寻找优化解的能力</span><s>&gt;</s></el-col>
 
           </el-row>
         </div>
@@ -83,7 +83,7 @@
       <!--平台目标市场-->
       <div id="market"  class="market">
         <div class="marketDesc">
-          <h3 class=" ">精确定位，发散市场，逸动云能为各种类型的市场提供服务</h3>
+          <h3 class=" ">精确定位，发散市场，XX云能为各种类型的市场提供服务</h3>
         </div>
         <el-row type="flex" class="row-bg" justify="space-around">
           <el-col :span="6">
@@ -129,12 +129,12 @@
       </div>
       <!--分割线-->
       <div class="line"></div>
-      <!--逸动多中心显示chart-->
+      <!--XX多中心显示chart-->
       <div id="map" >
         <el-row justify="center" type="flex" class="row-bg">
 
          <el-col :span="6">
-           <h3 >逸动云分布全国的骨科中心--数据更可靠</h3>
+           <h3 >XX云分布全国的骨科中心--数据更可靠</h3>
          </el-col>
         </el-row >
         <el-row justify="center" type="flex" class="row-bg">
@@ -149,9 +149,9 @@
       <!--立刻注册按钮及点击查看多中心按钮-->
       <el-row id="regNowRow"  type="flex" justify="center">
           <el-col :span="8">
-            <router-link to="/Mcenter"><span class="regNowRow_btn"  id="regNow_2mcenter">查看逸动多中心</span></router-link>
-            <router-link to="/Register"><span class="regNowRow_btn" id="regNowRow_regbtn" >免费注册</span></router-link>
-            <router-link to="/Login"><span class="regNowRow_btn" id="regNowRow_loginbtn" >立刻登录</span></router-link>
+            <router-link to="/Mcenter" class="RR-btn"><span class="regNowRow_btn"  id="regNow_2mcenter">查看XX多中心</span></router-link>
+            <router-link to="/Register" class="RR-btn"><span class="regNowRow_btn" id="regNowRow_regbtn" >免费注册</span></router-link>
+            <router-link to="/Login" class="RR-btn"><span class="regNowRow_btn" id="regNowRow_loginbtn" >立刻登录</span></router-link>
           </el-col>
       </el-row>
 
@@ -167,9 +167,9 @@
 
           return {
             items:[
-              {title:"逸动大数据",src:"/static/images/index/silde-banner3.jpg",desc:"逸动依托全国各地的多中心建立骨科、关节大数据！"},
-              {title:"逸动云计算",src:"/static/images/index/silde-banner4.jpg",desc:"逸动多中心上传的数据通过云计算处理大数据"},
-              {title:"逸动神经网络",src:"/static/images/index/silde-banner5.jpg",desc:"建立骨科关节测试模型，数据分析更科学高效！"},
+              {title:"XX大数据",src:"/static/images/index/silde-banner3.jpg",desc:"XX依托全国各地的多中心建立骨科、关节大数据！"},
+              {title:"XX云计算",src:"/static/images/index/silde-banner4.jpg",desc:"XX多中心上传的数据通过云计算处理大数据"},
+              {title:"XX神经网络",src:"/static/images/index/silde-banner5.jpg",desc:"建立骨科关节测试模型，数据分析更科学高效！"},
               ],
             calDetailShow:true,
             storeDetailShow:false,
@@ -202,7 +202,8 @@
               this.storeDetailShow =false;
               this.calDetailShow=false;
             }
-          }
+          },
+
 
         },
         created: function () {
@@ -367,6 +368,39 @@
     padding: 10px;
     height: 25px;
     margin-left:5px;
+  }
+  .RR-btn>span{
+    border-radius: 2px ;
+  }
+  .RR-btn>span:hover{
+    color:#00c1de;
+    background:#fff ;
+  }
+  #calDetail,#storeDetail,#neuralDetail{
+    height: 160px;
+  }
+  .funcDescCol{
+    border: 1px solid transparent;
+
+
+    border-radius: 2px ;
+  }
+  .funcDescCol>span{
+    height: 60px;
+    display: inline-block;
+  }
+
+  .funcDescCol:hover{
+    border: 1px solid #fff;
+    background: #fff;
+    box-shadow:0 0 8px 0 rgba(0,0,0,.15);
+  }
+  .funcDescCol>s{
+    display: none;
+    text-decoration: none;
+    position: absolute;
+    top: 25%;
+    right: 1%;
   }
 
 

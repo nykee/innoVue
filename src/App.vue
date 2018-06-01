@@ -6,7 +6,7 @@
     <router-view></router-view>
     <!--页脚-->
     <FootBar></FootBar>
-    <BackToTopBtn class="toTopBtn" v-show="isShow"></BackToTopBtn>
+    <BackToTopBtn class="toTopBtn" v-show="isShow" ></BackToTopBtn>
   </div>
 </template>
 
@@ -17,36 +17,39 @@
 export default {
   data(){
     return {
-      isShow:true,
-      topVal:document.documentElement.scrollTop
-
-
+      isShow:false,
+      scroll:'',
+      isIndex:true
     }
   },
   methods:{
-    chkIndexAndTop(){
-      let path =this.$route.path;
-      this.isShow = (path !=="/")?false:true;
-      console.log(this.topVal);
-      if(this.topVal>100){
+
+    chkscroll(){
+      this.isIndex = this.$route.path ==="/";
+      this.scroll = document.body.scrollTop ||document.documentElement.scrollTop;
+      if(this.isIndex&&(this.scroll>100)){
+        this.isShow = true;
+      }
+      else{
         this.isShow =false;
       }
-    }
+    },
+    chkIndex(){
+      if(this.isIndex ===false){
+        this.isShow =false;
+      }
+    },
 
   },
   mounted:function () {
-    this.chkIndexAndTop();
+    window.addEventListener('scroll', this.chkscroll)
   },
   watch:{
-    '$route':'chkIndexAndTop'
+    '$route':'chkIndex'
   },
   components:{
     FootBar,Navbar,BackToTopBtn
   }
-
-
-
-
 
 }
 </script>

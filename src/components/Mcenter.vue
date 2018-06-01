@@ -2,9 +2,9 @@
 
   <el-row  id="main-container">
     <el-row >
-      <h1 id="title" class=" title " >逸动医疗多中心展示</h1>
+      <h1 id="title" class=" title " >XX医疗多中心展示</h1>
       <div class="defaultInfo ">
-        <h3  class="mCenterDisc">逸动医疗致力于关节功能多中心的建立，在北京上海广州香港等地均建立了多中心</h3>
+        <h3  class="mCenterDisc">XX医疗致力于关节功能多中心的建立，在北京上海广州香港等地均建立了多中心</h3>
       </div>
     </el-row>
     <div >
@@ -32,7 +32,7 @@
       <el-col id="mCenterInfo"  :span="8">
 
         <div class="beijingInfo ">
-          <b>逸动医疗北京中心</b>
+          <b>XX医疗北京中心</b>
           <ul>
             <li>
               <router-link to="/Hospital/:301"><img src="/static/images/mCenter/301.png" alt="解放军301总医院"><s>解放军301总医院</s></router-link>
@@ -46,7 +46,7 @@
           </ul>
         </div>
         <div class="shanghaiInfo">
-          <b>逸动医疗上海中心</b>
+          <b>XX医疗上海中心</b>
           <ul>
             <li>
               <router-link to="/Hospital/:SHHS"><img src="/static/images/mCenter/hsyy.png" alt="华山医院"><s>华山医院</s></router-link>
@@ -60,7 +60,7 @@
           </ul>
         </div>
         <div class="guangdongInfo">
-          <b>逸动医疗广东中心</b>
+          <b>XX医疗广东中心</b>
           <ul>
             <li>
               <router-link to="/Hospital/:GZJQ"><img src="/static/images/mCenter/gzjy.png" alt=""><s>广州军区总医院</s></router-link>

@@ -1,6 +1,6 @@
 <template>
 
-   <div id="chart" style="height: 500px;width: 500px">
+   <div id="chart" style="height: 500px;width: 500px" @click ='toMcenter'>
    </div>
 
 </template>
@@ -120,7 +120,11 @@
               }
             }
         },
-        methods: {},
+        methods: {
+          toMcenter(){
+            this.$router.push('/Mcenter');
+          }
+        },
         created: function () {
 
         },
@@ -130,6 +134,7 @@
       mounted(){
         let chart =  echarts.init(document.getElementById('chart'));
         chart.setOption(this.mapOption);
+        /*chart.on(echarts.config.EVENT.CLICK,this.toMcenter);*/
       }
     }
 </script>

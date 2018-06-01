@@ -20,10 +20,10 @@
             <span class="ctUSLink">联系我们</span>
           </li>
           <li>
-            <a href="">地址：上海市漕河泾开发区松江高科技园<br>莘砖公路518号11栋1004室</a>
+            <a href="">地址：上海市XXXXXXX园<br>XXX路XX号</a>
           </li>
-          <li class="li_2">电话：021-37027535 37027537<br/>传真：021-67690739<br/><a href="mailto:info@innomotion.biz">E-mail：info@innomotion.biz</a><br /><a
-            href="http://www.innomotion.biz">http://www.innomotion.biz</a></li>
+          <li class="li_2">电话：021-XXXXX XXXXX<br/>传真：021-XXXXXX<br/><a href="mailto:info@XXXXXX.biz">E-mail：info@XXXXXX.biz</a><br /><a
+            href="#">http://www.ABCDEF.biz</a></li>
         </ul>
       </el-col>
 
@@ -32,12 +32,12 @@
 
       <el-col :span="12" class="copyright ">
         <ul>
-          <li>上海逸动医学科技有限公司</li>
-          <li>Copyright &copy; 2012-2017 Shanghai Innomotion Medical Inc. All Rights Reserved</li>
+          <li>上海XXXX科技有限公司</li>
+          <li>Copyright &copy; 2012-2017 Shanghai XXXXX TECH Inc. All Rights Reserved</li>
         </ul>
       </el-col>
       <el-col :span="6" :offset="6" class="bottomLogo">
-        <img src="../../static/images/inno1.png" alt="逸动医疗">
+        <img src="" alt="XX医疗">
       </el-col>
     </el-row>
 
