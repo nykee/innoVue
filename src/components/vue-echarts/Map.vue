@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <h2>运动学病例管理</h2>
-  </div>
+
 </template>
 
 <script>
+  import ECharts from 'vue-echarts/components/ECharts'
+  import 'echarts/lib/chart/map'
     export default {
         data() {
             return {}
@@ -13,7 +13,12 @@
         created: function () {
 
         },
-        components: {}
+        mounted() {
+
+        },
+        components: {
+          chart: ECharts
+        }
     }
 </script>
 <style>

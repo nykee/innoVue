@@ -4,11 +4,13 @@ import Mcenter from '../views/Mcenter.vue'
 import Manage from '../views/Manage.vue'
 import Index from '../views/Index.vue'
 import Hospital from '../components/Hospital.vue'
-import SportsUpload from '../components/Sports/SportsUpload.vue'
-import SportsManage from '../components/Sports/SportsManage.vue'
-import SportsCharts from '../components/Sports/SportsCharts.vue'
-import SportsHotMap from '../components/Sports/SportsHotMap.vue'
-import Login from '../components/Login.vue'
+import SportsUpload from '../components/ManageCenter/Sports/SportsUpload.vue'
+import SportsManage from '../components/ManageCenter/Sports/SportsManage.vue'
+import SportsCharts from '../components/ManageCenter/Sports/SportsCharts.vue'
+import SportsHotMap from '../components/ManageCenter/Sports/SportsHotMap.vue'
+import SellsDash from '../components/ManageCenter/Sells/SellsDashboard'
+import ServerDash from '../components/ManageCenter/Server/ServerDashboard'
+import Login from '../views/Login.vue'
 Vue.use(Router);
 
 export default new Router({
@@ -100,6 +102,16 @@ export default new Router({
           path:'SportsHotMap',
 
           component:SportsHotMap
+        },
+        {
+          path:'SellsDash',
+
+          component:SellsDash
+        },
+        {
+          path:'ServerDash',
+
+          component:ServerDash
         },
       ]
     },

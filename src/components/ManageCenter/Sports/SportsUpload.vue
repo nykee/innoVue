@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h3>运动学数据上传</h3>
+    <!--<h3>运动学数据上传</h3>-->
+    <CommonHeader title="运动学数据上传" iconName="fa fa-magic fa-2x"/>
     <el-upload
       class="upload-demo"
       ref="upload"
@@ -18,6 +19,7 @@
 </template>
 
 <script>
+  import CommonHeader from '../CommonHeader'
     export default {
         data() {
             return {
@@ -38,7 +40,7 @@
         created: function () {
 
         },
-        components: {}
+        components: {CommonHeader}
     }
 </script>
 <style>

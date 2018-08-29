@@ -10,7 +10,7 @@
           <el-menu default-active="1-2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
           <el-submenu index="1">
             <template slot="title">
-              <i class="el-icon-message"></i>
+              <i class="fa fa-cogs fa-lg" aria-hidden="true"></i>
               <span slot="title">运动学分析</span>
             </template>
             <el-menu-item-group>
@@ -26,35 +26,40 @@
               <span slot="title">销售业务分析</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="2-1"><i class="el-icon-message"></i>销售业务dashboard</el-menu-item>
+              <el-menu-item index="2-1"  @click="ShowChildrenModule('SellsDash')"><i class="fa fa-tachometer fa-lg"></i>销售业务dashboard</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="3">
             <template slot="title">
-              <i class="el-icon-message"></i>
+              <i class="fa fa-server fa-lg" aria-hidden="true"></i>
               <span slot="title">服务器监控</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="3-1"><i class="el-icon-message"></i>服务器监控dashboard</el-menu-item>
+              <!--<el-menu-item index="3-1"><i class="el-icon-message"></i>服务器监控dashboard</el-menu-item>-->
+              <el-menu-item index="3-1" @click="ShowChildrenModule('ServerDash')"><i class="fa fa-tachometer fa-lg"></i>服务器监控dashboard</el-menu-item>
+
             </el-menu-item-group>
           </el-submenu>
         </el-menu>
         </div>
       </el-col>
-      <el-col :span="16">
+      <el-col :span="18">
         <router-view>
             <!--子模块显示路由-->
         </router-view>
       </el-col>
     </el-row>
+
   </div>
 </template>
 
 <script>
-  import SportsUpload from '../components/Sports/SportsUpload.vue';
-  import SportsHotMap from '../components/Sports/SportsHotMap.vue';
-  import SportsManage from '../components/Sports/SportsManage.vue';
-  import SportsCharts from '../components/Sports/SportsCharts.vue';
+  import SportsUpload from '../components/ManageCenter/Sports/SportsUpload.vue';
+  import SportsHotMap from '../components/ManageCenter/Sports/SportsHotMap.vue';
+  import SportsManage from '../components/ManageCenter/Sports/SportsManage.vue';
+  import SportsCharts from '../components/ManageCenter/Sports/SportsCharts.vue';
+  import SellsDash from '../components/ManageCenter/Sells/SellsDashboard';
+  import ServerDash from '../components/ManageCenter/Server/ServerDashboard';
     export default {
         data() {
           return{
@@ -86,6 +91,14 @@
 
               this.$router.push( {path: '/Manage/SportsHotMap'})
             }
+            else if(funcName ==="SellsDash"){
+
+              this.$router.push( {path: '/Manage/SellsDash'})
+            }
+            else if(funcName ==="ServerDash"){
+
+              this.$router.push( {path: '/Manage/ServerDash'})
+            }
 
           }
         },
@@ -93,7 +106,12 @@
 
         },
         components: {
-          SportsUpload,SportsHotMap,SportsManage,SportsCharts
+          SportsUpload,
+          SportsHotMap,
+          SportsManage,
+          SportsCharts,
+          SellsDash,
+          ServerDash
         },
       mounted(){
 //        this.$router.push( {path: '/Manage/SportsUpload'})

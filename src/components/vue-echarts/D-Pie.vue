@@ -1,0 +1,34 @@
+<template>
+  <chart
+    :options="chartConfig"
+
+    ref="dPie"
+    auto-resize
+  />
+</template>
+
+<script>
+  import ECharts from 'vue-echarts/components/ECharts'
+  import 'echarts/lib/chart/pie';
+    export default {
+      props:['chartConfig'],
+        data() {
+            return {
+
+            }
+        },
+        methods: {},
+        created: function () {
+
+        },
+        mounted() {
+
+        },
+        components: {
+          chart: ECharts
+        }
+    }
+</script>
+<style>
+
+</style>

@@ -140,7 +140,7 @@
         <el-row justify="center" type="flex" class="row-bg">
           <el-col :span="12">
               <!--地图chart,组件引入-->
-            <MapChart></MapChart>
+            <!--<MapChart></MapChart>-->
           </el-col>
         </el-row>
 
@@ -161,7 +161,7 @@
 </template>
 
 <script>
-  import MapChart from "../components/charts/MapChart.vue";
+  // import MapChart from "../components/charts/MapChart.vue";
     export default {
         data(){
 
@@ -213,7 +213,7 @@
 
       },
         components: {
-        MapChart
+        // MapChart
         }
     }
 </script>

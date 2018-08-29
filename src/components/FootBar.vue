@@ -33,11 +33,11 @@
       <el-col :span="12" class="copyright ">
         <ul>
           <li>上海XXXX科技有限公司</li>
-          <li>Copyright &copy; 2012-2017 Shanghai XXXXX TECH Inc. All Rights Reserved</li>
+          <li>Copyright &copy; 2012-{{currentYear}} Shanghai XXXXX TECH Inc. All Rights Reserved</li>
         </ul>
       </el-col>
       <el-col :span="6" :offset="6" class="bottomLogo">
-        <img src="" alt="XX医疗">
+        <img src="../../static/images/nykeeLogo.png" alt="XX医疗">
       </el-col>
     </el-row>
 
@@ -47,10 +47,11 @@
 
 <script>
     export default {
-        data() {
-            return {
-              isLoginPage:false
-            }
+        data:()=>{
+          return {
+            isLoginPage:false,
+            currentYear:new Date().getFullYear()
+          }
         },
         methods: {},
         created: function () {

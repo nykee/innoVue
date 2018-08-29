@@ -27,7 +27,7 @@
     </div>
     <el-row>
       <el-col  :span="14" id="chart-container">
-        <MCmapchart></MCmapchart>
+        <!--<MCmapchart></MCmapchart>-->
       </el-col>
       <el-col id="mCenterInfo"  :span="8">
 
@@ -80,7 +80,7 @@
 </template>
 
 <script>
-  import MCmapchart from '../components/charts/MCmapchart.vue';
+  // import MCmapchart from '../components/charts/MCmapchart.vue';
     export default {
         data() {
           return{
@@ -96,7 +96,7 @@
 
         },
         components: {
-          MCmapchart
+          // MCmapchart
         }
     }
 </script>
