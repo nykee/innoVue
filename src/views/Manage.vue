@@ -23,21 +23,19 @@
           <el-submenu index="2">
             <template slot="title">
               <i class="el-icon-message"></i>
-              <span slot="title">双拼面影像系统</span>
+              <span slot="title">销售业务分析</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="2-1"><i class="el-icon-message"></i>双拼面数据管理</el-menu-item>
-              <el-menu-item index="2-2"><i class="el-icon-message"></i>双拼面数据上传</el-menu-item>
+              <el-menu-item index="2-1"><i class="el-icon-message"></i>销售业务dashboard</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="3">
             <template slot="title">
               <i class="el-icon-message"></i>
-              <span slot="title">3D打印分析</span>
+              <span slot="title">服务器监控</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="3-1"><i class="el-icon-message"></i>3D打印数据管理</el-menu-item>
-              <el-menu-item index="3-2"><i class="el-icon-message"></i>3D打印数据上传</el-menu-item>
+              <el-menu-item index="3-1"><i class="el-icon-message"></i>服务器监控dashboard</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>
@@ -53,10 +51,10 @@
 </template>
 
 <script>
-  import SportsUpload from './Sports/SportsUpload.vue';
-  import SportsHotMap from './Sports/SportsHotMap.vue';
-  import SportsManage from './Sports/SportsManage.vue';
-  import SportsCharts from './Sports/SportsCharts.vue';
+  import SportsUpload from '../components/Sports/SportsUpload.vue';
+  import SportsHotMap from '../components/Sports/SportsHotMap.vue';
+  import SportsManage from '../components/Sports/SportsManage.vue';
+  import SportsCharts from '../components/Sports/SportsCharts.vue';
     export default {
         data() {
           return{

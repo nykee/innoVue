@@ -88,19 +88,19 @@
         <el-row type="flex" class="row-bg" justify="space-around">
           <el-col :span="6">
             <div>
-              <img src="/static/images/index/ky.png" alt=""/>
+              <img src="static/images/index/ky.png" alt=""/>
             </div>
             <a href="javascript:void 0" class="marketTitle" style="color:#000"><span>科研评估</span></a>
           </el-col>
           <el-col :span="6">
             <div>
-              <img src="/static/images/index/kf.png" alt=""/>
+              <img src="static/images/index/kf.png" alt=""/>
             </div>
             <a href="javascript:void 0" class="marketTitle" style="color:#000"><span>关节康复</span></a>
           </el-col>
           <el-col :span="6">
             <div>
-              <img src="/static/images/index/mz.png" alt="">
+              <img src="static/images/index/mz.png" alt="">
             </div>
             <a href="javascript:void 0" class="marketTitle" style="color:#000"><span>门诊辅助</span></a>
           </el-col>
@@ -108,19 +108,19 @@
         <el-row type="flex" class="row-bg" justify="space-around">
           <el-col :span="6">
             <div>
-              <img src="/static/images/index/yd.png" alt="">
+              <img src="static/images/index/yd.png" alt="">
             </div>
             <a href="javascript:void 0" class="marketTitle" style="color:#000"><span>运动训练</span></a>
           </el-col>
           <el-col :span="6">
             <div>
-              <img src="/static/images/index/js.png" alt="">
+              <img src="static/images/index/js.png" alt="">
             </div>
             <a href="javascript:void 0" class="marketTitle" style="color:#000"><span>军事训练</span></a>
           </el-col>
           <el-col :span="6">
             <div>
-              <img src="/static/images/index/tj.png" alt="">
+              <img src="static/images/index/tj.png" alt="">
             </div>
             <a href="javascript:void 0" class="marketTitle" style="color:#000"><span>体检项目</span></a>
           </el-col>
@@ -161,15 +161,15 @@
 </template>
 
 <script>
-  import MapChart from "./charts/MapChart.vue";
+  import MapChart from "../components/charts/MapChart.vue";
     export default {
         data(){
 
           return {
             items:[
-              {title:"XX大数据",src:"/static/images/index/silde-banner3.jpg",desc:"XX依托全国各地的多中心建立骨科、关节大数据！"},
-              {title:"XX云计算",src:"/static/images/index/silde-banner4.jpg",desc:"XX多中心上传的数据通过云计算处理大数据"},
-              {title:"XX神经网络",src:"/static/images/index/silde-banner5.jpg",desc:"建立骨科关节测试模型，数据分析更科学高效！"},
+              {title:"XX大数据",src:"static/images/index/silde-banner3.jpg",desc:"XX依托全国各地的多中心建立骨科、关节大数据！"},
+              {title:"XX云计算",src:"static/images/index/silde-banner4.jpg",desc:"XX多中心上传的数据通过云计算处理大数据"},
+              {title:"XX神经网络",src:"static/images/index/silde-banner5.jpg",desc:"建立骨科关节测试模型，数据分析更科学高效！"},
               ],
             calDetailShow:true,
             storeDetailShow:false,
@@ -288,11 +288,11 @@
     margin-bottom:20px;
   }
   a[id='yjs'] .funcImg{
-    background: url("/static/images/index/yjs_80.png") no-repeat;
+    background: url("../../static/images/index/yjs_80.png") no-repeat;
   }a[id='ycc'] .funcImg{
-     background: url("/static/images/index/ycc_80.png") no-repeat;
+     background: url("../../static/images/index/ycc_80.png") no-repeat;
    }a[id='sjwl'] .funcImg{
-      background: url("/static/images/index/sjwl_80.png") no-repeat;
+      background: url("../../static/images/index/sjwl_80.png") no-repeat;
     }
   .platformIntro{
     margin-top:30px;}

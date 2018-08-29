@@ -6,25 +6,25 @@
     <router-view></router-view>
     <!--页脚-->
     <FootBar></FootBar>
-    <BackToTopBtn class="toTopBtn" v-show="isShow" ></BackToTopBtn>
+    <BackToTopBtn class="toTopBtn" v-show="isToTop" ></BackToTopBtn>
   </div>
 </template>
 
 <script>
   import FootBar from "./components/FootBar.vue";
-  import Navbar from "./components/Navbar.vue";
+  import Navbar from "./components/NavBar.vue";
   import BackToTopBtn from './components/BackToTopBtn.vue';
 export default {
   data(){
     return {
-      isShow:false,
+      isToTop:false,
       scroll:'',
       isIndex:true
     }
   },
   methods:{
 
-    chkscroll(){
+    chkScroll(){
       this.isIndex = this.$route.path ==="/";
       this.scroll = document.body.scrollTop ||document.documentElement.scrollTop;
       if(this.isIndex&&(this.scroll>100)){
@@ -42,7 +42,7 @@ export default {
 
   },
   mounted:function () {
-    window.addEventListener('scroll', this.chkscroll)
+    window.addEventListener('scroll', this.chkScroll)
   },
   watch:{
     '$route':'chkIndex'

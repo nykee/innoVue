@@ -35,13 +35,13 @@
           <b>XX医疗北京中心</b>
           <ul>
             <li>
-              <router-link to="/Hospital/:301"><img src="/static/images/mCenter/301.png" alt="解放军301总医院"><s>解放军301总医院</s></router-link>
+              <router-link to="/Hospital/:301"><img src="static/images/mCenter/301.png" alt="解放军301总医院"><s>解放军301总医院</s></router-link>
             </li>
             <li>
-              <router-link to="/Hospital/:JST"><img src="/static/images/mCenter/jst.png" alt="积水潭医院"><s>积水潭医院</s></router-link>
+              <router-link to="/Hospital/:JST"><img src="static/images/mCenter/jst.png" alt="积水潭医院"><s>积水潭医院</s></router-link>
             </li>
             <li>
-              <router-link to="/Hospital/:GJTY"><img src="/static/images/mCenter/nstc.png" alt="国家体育运动总局"><s>国家体育运动总局</s></router-link>
+              <router-link to="/Hospital/:GJTY"><img src="static/images/mCenter/nstc.png" alt="国家体育运动总局"><s>国家体育运动总局</s></router-link>
             </li>
           </ul>
         </div>
@@ -49,13 +49,13 @@
           <b>XX医疗上海中心</b>
           <ul>
             <li>
-              <router-link to="/Hospital/:SHHS"><img src="/static/images/mCenter/hsyy.png" alt="华山医院"><s>华山医院</s></router-link>
+              <router-link to="/Hospital/:SHHS"><img src="static/images/mCenter/hsyy.png" alt="华山医院"><s>华山医院</s></router-link>
             </li>
             <li>
-              <router-link to="/Hospital/:D9RM"><img src="/static/images/mCenter/9rm.png" alt="上海市第九人民医院"><s>上海市第九人民医院</s></router-link>
+              <router-link to="/Hospital/:D9RM"><img src="static/images/mCenter/9rm.png" alt="上海市第九人民医院"><s>上海市第九人民医院</s></router-link>
             </li>
             <li>
-              <router-link to="/Hospital/:D6RM"><img src="/static/images/mCenter/6rm.jpg" alt="上海市第六人民医院"><s>上海市第六人民医院</s></router-link>
+              <router-link to="/Hospital/:D6RM"><img src="static/images/mCenter/6rm.jpg" alt="上海市第六人民医院"><s>上海市第六人民医院</s></router-link>
             </li>
           </ul>
         </div>
@@ -63,13 +63,13 @@
           <b>XX医疗广东中心</b>
           <ul>
             <li>
-              <router-link to="/Hospital/:GZJQ"><img src="/static/images/mCenter/gzjy.png" alt=""><s>广州军区总医院</s></router-link>
+              <router-link to="/Hospital/:GZJQ"><img src="static/images/mCenter/gzjy.png" alt=""><s>广州军区总医院</s></router-link>
             </li>
             <li>
-              <router-link to="/Hospital/:HNLG"><img src="/static/images/mCenter/hnlg.jpg" alt=""><s>华南理工大学</s></router-link>
+              <router-link to="/Hospital/:HNLG"><img src="static/images/mCenter/hnlg.jpg" alt=""><s>华南理工大学</s></router-link>
             </li>
             <li>
-              <router-link to="/Hospital/:XGZW"><img src="/static/images/mCenter/wales.png" alt=""><s>香港威尔士亲王医院</s></router-link>
+              <router-link to="/Hospital/:XGZW"><img src="static/images/mCenter/wales.png" alt=""><s>香港威尔士亲王医院</s></router-link>
             </li>
           </ul>
         </div>
@@ -80,7 +80,7 @@
 </template>
 
 <script>
-  import MCmapchart from './charts/MCmapchart.vue';
+  import MCmapchart from '../components/charts/MCmapchart.vue';
     export default {
         data() {
           return{
