@@ -1,9 +1,9 @@
 <template>
-  <DPie :chartConfig="chartConfig"></DPie>
+  <DPie :DPieConfig="DPieConfig" style="height: 18.75rem;width: 18.75rem"/>
 </template>
 
 <script>
-  import DPie from '../../vue-echarts/D-Pie'
+  import DPie from '../../vue-echarts/DPie/D-Pie'
     export default {
 
         data() {
@@ -13,7 +13,7 @@
             return colorList[params.dataIndex]
           };
             return {
-              chartConfig:{
+              DPieConfig:{
                 legend: {
                   show:false,
                   orient: 'horizontal',

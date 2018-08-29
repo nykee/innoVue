@@ -1,8 +1,8 @@
 <template>
   <chart
-    :options="chartConfig"
+    :options="DPieConfig"
 
-    ref="dPie"
+    ref="DPie"
     auto-resize
   />
 </template>
@@ -11,7 +11,7 @@
   import ECharts from 'vue-echarts/components/ECharts'
   import 'echarts/lib/chart/pie';
     export default {
-      props:['chartConfig'],
+      props:['DPieConfig'],
         data() {
             return {
 
@@ -25,7 +25,7 @@
 
         },
         components: {
-          chart: ECharts
+          chart: ECharts,
         }
     }
 </script>

@@ -1,7 +1,6 @@
 <template>
   <chart
     :options="pieOptions"
-    :init-options="initOptions"
     ref="pie"
     auto-resize
   />
@@ -9,7 +8,7 @@
 
 <script>
   import ECharts from 'vue-echarts/components/ECharts'
-  import 'echarts/lib/chart/pie.js'
+  import 'echarts/lib/chart/pie'
     export default {
     props:['pieOptions'],
         data() {

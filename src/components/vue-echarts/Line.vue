@@ -1,7 +1,6 @@
 <template>
   <chart
-    :options="lineOptions"
-    :init-options="initOptions"
+    :options="LineConfig"
     ref="line"
     auto-resize
   />
@@ -11,11 +10,10 @@
   import ECharts from 'vue-echarts/components/ECharts'
   import 'echarts/lib/chart/line'
     export default {
+    props:['LineConfig'],
         data() {
             return {
-              lineOptions:{
 
-              }
             }
         },
         methods: {},

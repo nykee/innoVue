@@ -5,7 +5,7 @@
       <el-col
         :lg="16"
       >
-        Month
+        <MonthlySummary/>
       </el-col>
       <el-col
         :lg="8"
@@ -13,6 +13,8 @@
         <PercentCount/>
       </el-col>
     </el-row>
+
+
 
   </div>
 
@@ -22,6 +24,7 @@
 <script>
   import CommonHeader from '../CommonHeader'
   import PercentCount from './PercentCount'
+  import MonthlySummary from './MonthlySummary'
     export default {
         data() {
             return {}
@@ -35,7 +38,8 @@
         },
         components: {
           CommonHeader,
-          PercentCount
+          PercentCount,
+          MonthlySummary
         }
     }
 </script>
