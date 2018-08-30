@@ -2,7 +2,7 @@
   <chart
     :options="pieOptions"
     ref="pie"
-    auto-resize
+    auto-resize="true"
   />
 </template>
 

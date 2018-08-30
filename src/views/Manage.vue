@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-row class="main-content">
-      <el-col :span="6">
+      <el-col :lg="3">
        <!-- <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
           <el-radio-button :label="false">展开</el-radio-button>
           <el-radio-button :label="true">收起</el-radio-button>
@@ -43,7 +43,7 @@
         </el-menu>
         </div>
       </el-col>
-      <el-col :span="18">
+      <el-col :lg="21">
         <router-view>
             <!--子模块显示路由-->
         </router-view>

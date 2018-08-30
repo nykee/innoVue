@@ -3,7 +3,7 @@
 
     <!--轮播-->
     <el-carousel height="394px" indicator-position="outside" >
-      <el-carousel-item v-for="item in items" :key="item"  >
+      <el-carousel-item v-for="item in items" :key="item.id"  >
         <div style="position: relative">
           <img :src="item.src" alt="">
           <h2>{{item.title}}</h2>
@@ -23,19 +23,19 @@
         <!--功能图标-->
         <el-row  type="flex" class="row-bg functionName" justify="space-around">
               <el-col :span="6" >
-                  <a id="yjs"  @click="calDetailtoggle()">
+                  <a id="yjs"  @click="calDetailToggle()">
                     <div class="funcImg" ></div>
                     <div class="funcTitle myActive" >云计算</div>
                   </a>
               </el-col>
               <el-col :span="6" >
-                  <a id="ycc" @click="storeDetailtoggle()">
+                  <a id="ycc" @click="storeDetailToggle()">
                     <div class="funcImg" ></div>
                     <div class="funcTitle" >云存储</div>
                   </a>
               </el-col>
               <el-col :span="6"  >
-                  <a id="sjwl" @click="neuralDetailtoggle()">
+                  <a id="sjwl" @click="neuralDetailToggle()">
                     <div class="funcImg" ></div>
                     <div class="funcTitle" >神经网络</div>
                   </a>
@@ -140,7 +140,7 @@
         <el-row justify="center" type="flex" class="row-bg">
           <el-col :span="12">
               <!--地图chart,组件引入-->
-            <!--<MapChart></MapChart>-->
+            <MapChart></MapChart>
           </el-col>
         </el-row>
 
@@ -161,15 +161,17 @@
 </template>
 
 <script>
-  // import MapChart from "../components/charts/MapChart.vue";
+  import MapChart from "../components/IndexPage/MapChart";
+
     export default {
+
         data(){
 
           return {
             items:[
-              {title:"XX大数据",src:"static/images/index/silde-banner3.jpg",desc:"XX依托全国各地的多中心建立骨科、关节大数据！"},
-              {title:"XX云计算",src:"static/images/index/silde-banner4.jpg",desc:"XX多中心上传的数据通过云计算处理大数据"},
-              {title:"XX神经网络",src:"static/images/index/silde-banner5.jpg",desc:"建立骨科关节测试模型，数据分析更科学高效！"},
+              {id:1,title:"XX大数据",src:"static/images/index/silde-banner3.jpg",desc:"XX依托全国各地的多中心建立骨科、关节大数据！"},
+              {id:2,title:"XX云计算",src:"static/images/index/silde-banner4.jpg",desc:"XX多中心上传的数据通过云计算处理大数据"},
+              {id:3,title:"XX神经网络",src:"static/images/index/silde-banner5.jpg",desc:"建立骨科关节测试模型，数据分析更科学高效！"},
               ],
             calDetailShow:true,
             storeDetailShow:false,
@@ -178,7 +180,7 @@
 
         },
         methods: {
-          calDetailtoggle(){
+          calDetailToggle(){
             if(this.calDetailShow){return 0}
             else {
               this.calDetailShow = !this.calDetailShow;
@@ -187,7 +189,7 @@
             }
 
           },
-          storeDetailtoggle(){
+          storeDetailToggle(){
             if(this.storeDetailShow){return 0}
             else {
               this.storeDetailShow= !this.storeDetailShow;
@@ -195,7 +197,7 @@
               this.neuralDetailShow=false;
             }
           },
-          neuralDetailtoggle(){
+          neuralDetailToggle(){
             if(this.neuralDetailShow){return 0}
             else {
               this.neuralDetailShow= !this.neuralDetailShow;
@@ -213,7 +215,7 @@
 
       },
         components: {
-        // MapChart
+        MapChart
         }
     }
 </script>
