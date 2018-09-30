@@ -1,10 +1,12 @@
 <template>
   <div>
     <h2>your orders</h2>
+    <OrderListsHeader></OrderListsHeader>
   </div>
 </template>
 
 <script>
+  import OrderListsHeader from './OrderListsHeader'
     export default {
 
         data() {
@@ -34,7 +36,9 @@
         mounted() {
 
         },
-        components: {}
+        components: {
+          OrderListsHeader
+        }
     }
 </script>
 <style>

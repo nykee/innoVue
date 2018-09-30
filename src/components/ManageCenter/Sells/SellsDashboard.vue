@@ -11,7 +11,7 @@
     </el-row>
     <el-row>
       <el-col :lg="16">
-        orderlist
+        <OrderLists></OrderLists>
       </el-col>
       <el-col :lg="8">
         amountCount
@@ -43,6 +43,7 @@
   import MonthlySummary from './MonthlySummary'
   import Products from './Products/Products'
   import ProdChartConfig from '../../../store/ProdChartConfig'
+  import OrderLists from './OrderLists';
     export default {
         data() {
 
@@ -78,7 +79,8 @@
           CommonHeader,
           PercentCount,
           MonthlySummary,
-          Products
+          Products,
+          OrderLists
         }
     }
 </script>
