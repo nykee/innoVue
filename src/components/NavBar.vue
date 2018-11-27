@@ -1,18 +1,25 @@
 <template>
-  <div class="navBar" v-show="!isLoginPage">
-    <div class="clearfix">
-      <h2 class="fl pic"><router-link to="/"><img src="" alt=""></router-link></h2>
-      <el-menu  theme="dark" :default-active="activeIndex" class="fl menu" mode="horizontal" @select="handleSelect">
-        <el-menu-item index="1"><router-link to="/">       首页   </router-link></el-menu-item>
-        <el-menu-item index="2"><router-link to="/Mcenter">多中心 </router-link></el-menu-item>
-        <el-menu-item index="3"><router-link to="/Manage">管理中心</router-link></el-menu-item>
-        <!--<el-menu-item index="5"><router-link to="/Register">注册  </router-link></el-menu-item>-->
-
-      </el-menu>
-      <div class="fr loginMenu"><router-link to="/Login">   登录  </router-link></div>
-    </div>
-
-  </div>
+    <Row  class="navBar" v-show="!isLoginPage">
+      <i-col span="2">
+        <h2 class="fl pic"><router-link to="/"><img src="" alt=""></router-link></h2>
+      </i-col>
+      <i-col span="20">  <Menu mode="horizontal" theme="dark" active-name="1">
+        <MenuItem name="1">
+          <Icon type="ios-paper" />
+          <router-link to="/">首页</router-link>
+        </MenuItem>
+        <MenuItem name="2">
+          <Icon type="ios-people" />
+          <router-link to="/Mcenter">多中心 </router-link>
+        </MenuItem>
+        <MenuItem name="3">
+          <Icon type="ios-stats" />
+          <router-link to="/Manage">管理中心</router-link>
+        </MenuItem>
+        </Menu>
+      </i-col>
+      <i-col span="2" ><Button type="primary" @click="login">登录</Button></i-col>
+    </Row>
 </template>
 
 <script>
@@ -24,15 +31,9 @@
             }
         },
         methods: {
-          handleSelect(key, keyPath) {
-//      console.log(key, keyPath);
+          login(){
+            this.$router.push("/Login")
           },
-          chkIsLoginPage(){
-            let path = this.$route.path;
-            if(String(path)==="/Login"){
-              this.isLoginPage =true;
-            }
-          }
         },
         created: function () {
 
@@ -40,10 +41,9 @@
         components: {}
     }
 </script>
-<style>
-  .navBar,.menu{
-    /*background: #79cace;*/
-    background: #324157;
+<style scoped="scoped">
+  .navBar{
+    background: #515A6E;
   }
   .pic{
     margin-right:30px;

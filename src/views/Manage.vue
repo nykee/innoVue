@@ -1,13 +1,13 @@
 <template>
   <div>
-    <el-row class="main-content">
-      <el-col :span="6">
+    <Row class="main-content">
+      <i-col :span="6">
        <!-- <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
           <el-radio-button :label="false">展开</el-radio-button>
           <el-radio-button :label="true">收起</el-radio-button>
         </el-radio-group>-->
         <div class="menuBG">
-          <el-menu default-active="1-2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+          <!--<el-menu default-active="1-2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
           <el-submenu index="1">
             <template slot="title">
               <i class="fa fa-cogs fa-lg" aria-hidden="true"></i>
@@ -35,20 +35,49 @@
               <span slot="title">服务器监控</span>
             </template>
             <el-menu-item-group>
-              <!--<el-menu-item index="3-1"><i class="el-icon-message"></i>服务器监控dashboard</el-menu-item>-->
+              &lt;!&ndash;<el-menu-item index="3-1"><i class="el-icon-message"></i>服务器监控dashboard</el-menu-item>&ndash;&gt;
               <el-menu-item index="3-1" @click="ShowChildrenModule('ServerDash')"><i class="fa fa-tachometer fa-lg"></i>服务器监控dashboard</el-menu-item>
 
             </el-menu-item-group>
           </el-submenu>
-        </el-menu>
+        </el-menu>-->
+
+          <Menu theme="light">
+            <Submenu name="1">
+              <template slot="title">
+                <Icon type="ios-paper" />
+                运动学分析
+              </template>
+              <MenuItem name="1-1" @click="ShowChildrenModule('SportsManage')">病例数据管理</MenuItem>
+              <MenuItem name="1-2" @click="ShowChildrenModule('SportsUPLD')">病例数据上传</MenuItem>
+              <MenuItem name="1-3" @click="ShowChildrenModule('SportsCharts')">基本图表分析</MenuItem>
+              <MenuItem name="1-4" @click="ShowChildrenModule('SportsHotMap')">病例数据热力图分布</MenuItem>
+            </Submenu>
+            <Submenu name="2">
+              <template slot="title">
+                <Icon type="ios-people" />
+                销售业务分析
+              </template>
+              <MenuItem name="2-1" @click="ShowChildrenModule('SellsDash')">销售业务dashboard</MenuItem>
+              <!--<MenuItem name="2-2">活跃用户</MenuItem>-->
+            </Submenu>
+            <Submenu name="3">
+              <template slot="title">
+                <Icon type="ios-stats" />
+                服务器监控
+              </template>
+              <MenuItem name="3-1" @click="ShowChildrenModule('ServerDash')">服务器监控dashboard</MenuItem>
+              <!--<MenuItem name="3-2">活跃用户</MenuItem>-->
+            </Submenu>
+          </Menu>
         </div>
-      </el-col>
-      <el-col :span="18">
+      </i-col>
+      <i-col :span="18">
         <router-view>
             <!--子模块显示路由-->
         </router-view>
-      </el-col>
-    </el-row>
+      </i-col>
+    </Row>
 
   </div>
 </template>
