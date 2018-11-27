@@ -7,9 +7,12 @@ import ElementUI from 'element-ui';
 import ECharts from 'vue-echarts/components/ECharts'
 import 'element-ui/lib/theme-chalk/index.css'
 import "font-awesome/css/font-awesome.min.css"
+import iView from 'iview';
+import 'iview/dist/styles/iview.css';
 
 //
 Vue.use(ElementUI);
+Vue.use(iView);
 Vue.component('chart', ECharts);
 
 
