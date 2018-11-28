@@ -9,7 +9,7 @@
         data() {
           let colorOption =function(params) {
             // build a color map as your need.
-            var colorList = ['#9F86FF','#1CA8DD','#007AE1',];
+            let colorList = ['#9F86FF','#1CA8DD','#007AE1',];
             return colorList[params.dataIndex]
           };
             return {
@@ -19,12 +19,12 @@
                   orient: 'horizontal',
                   x:'center',
                   y:'bottom',
-                  itemWidth:18,
+                  itemWidth:14,
                   itemHeight:14,
                   padding:0,
                   textStyle:{
                     color:'#8E95A4',
-                    fontSize:14,
+                    fontSize:12,
                     textAlign:'left'
                   },
                   align:'left',
@@ -63,7 +63,7 @@
                     name:'',
                     type:'pie',
                     avoidLabelOverlap: false,
-                    radius : ['50%', '70%'],
+                    radius : ['40%', '60%'],
                     itemStyle : {
                       normal : {
                         color: colorOption,
@@ -81,7 +81,7 @@
                           show : true,
                           position : 'center',
                           textStyle : {
-                            fontSize : '24',
+                            fontSize : '18',
                             fontWeight : 'bold'
                           },
                           /*formatter:

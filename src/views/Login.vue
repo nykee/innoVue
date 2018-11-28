@@ -1,19 +1,19 @@
 <template>
   <div class="loginBody">
 
-    <Form ref="formInline" :model="formInline" :rules="ruleInline" inline class="signin">
+    <Form ref="formInline" :model="formInline" :rules="ruleInline"  class="signin">
       <FormItem prop="user">
-        <Input type="text" v-model="formInline.user" placeholder="Username">
+        <Input type="text" v-model="formInline.user" placeholder="用户名">
         <Icon type="ios-person-outline" slot="prepend"></Icon>
         </Input>
       </FormItem>
       <FormItem prop="password">
-        <Input type="password" v-model="formInline.password" placeholder="Password">
+        <Input type="password" v-model="formInline.password" placeholder="密码">
         <Icon type="ios-lock-outline" slot="prepend"></Icon>
         </Input>
       </FormItem>
       <FormItem>
-        <Button type="primary" @click="handleSubmit('formInline')">Signin</Button>
+        <Button type="primary" @click="handleSubmit('formInline')">登录</Button>
       </FormItem>
     </Form>
 
@@ -33,11 +33,11 @@
               },
               ruleInline: {
                 user: [
-                  { required: true, message: 'Please fill in the user name', trigger: 'blur' }
+                  { required: true, message: '请输入用户名', trigger: 'blur' }
                 ],
                 password: [
-                  { required: true, message: 'Please fill in the password.', trigger: 'blur' },
-                  { type: 'string', min: 4, message: 'The password length cannot be less than 4 bits', trigger: 'blur' }
+                  { required: true, message: '请输入密码', trigger: 'blur' },
+                  { type: 'string', min: 4, message: '密码长度不能小于4位', trigger: 'blur' }
                 ]
               }
             }
@@ -88,7 +88,7 @@
 <style >
   .signin {
     width: 25%;
-    margin: 80px auto 0;
+    /*margin: 0 auto ;*/
     background-color: rgba(56, 49, 49, 0.13);
     padding: 40px;
     border: 2px ridge rgba(238, 238, 238, 0.13);
@@ -97,15 +97,16 @@
     -webkit-box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.57);
     box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.57);
     border-bottom: none;
+    position: absolute;
+    top:30%;
+    left:35%
   }
-  /*.loginBody{
-    background: url('../../static/images/Index_bg2.jpg') no-repeat;
-
-    background-attachment: fixed;
-    background-position: center;
+  .loginBody{
+    background: url('../../static/images/Index_bg2.jpg') no-repeat fixed center;
     background-size: cover;
-    height: 900px;
-  }*/
+    height: 43.75rem;
+    position: relative;
+  }
   /*html{
     background: url('../../static/images/Index_bg2.jpg') no-repeat;
 
