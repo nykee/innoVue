@@ -18,27 +18,70 @@
         </MenuItem>
         </Menu>
       </i-col>
-      <i-col span="2" ><Button type="primary" @click="login">登录</Button></i-col>
+      <i-col span="2" >
+        <Button type="primary" @click="login" v-if="!isLogin">登录</Button>
+        <UserAvatar v-if="isLogin"/>
+      </i-col>
     </Row>
 </template>
 
 <script>
+  import UserAvatar from "../components/UserAvatar"
     export default {
         data() {
             return {
               activeIndex: '1',
-              isLoginPage:false
+              isLoginPage:false,
+              isLogin:false
             }
         },
         methods: {
           login(){
             this.$router.push("/Login")
           },
+          checkLogin(){
+            console.log(sessionStorage.getItem("isLogin"));
+            if(sessionStorage.getItem("isLogin") == null){
+              this.isLogin = false;
+            }else {
+              this.isLogin = (sessionStorage.getItem("isLogin") === "true");
+            }
+            this.$on("userLogin",()=>{
+              console.log("receive login event");
+              this.isLogin = true
+            });
+
+            this.$on("userLogOut",(data)=>{
+              console.log(data);
+              console.log("receive logout event");
+              this.isLogin = false;
+            })
+          }
         },
+      mounted(){
+        this.checkLogin()
+          // console.log(sessionStorage.getItem("isLogin") == null);
+
+      },
+      // beforeRouteUpdate(to,from,next){
+      //     console.log("routerBupdate");
+      //   if(String(from) ==="/Login"){
+      //     this.isLogin = true;
+      //   }
+      //   next();
+      // },
         created: function () {
 
         },
-        components: {}
+      beforeRouteUpdate(from,to,next){
+        this.checkLogin();
+          next();
+      },
+
+      watch:{
+          isLogin:'checkLogin'
+      },
+        components: {UserAvatar}
     }
 </script>
 <style scoped="scoped">

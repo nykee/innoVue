@@ -1,34 +1,34 @@
 <template>
-  <div class="sells-dash-container">
+  <div class="sells-dash-container manage-page-subview-container">
     <CommonHeader title="销售监控dashboard" iconName="fa fa-magic fa-2x" style="color:#fff"/>
-    <el-row>
-      <el-col :lg="16">
+    <Row>
+      <i-col :lg="16">
         <MonthlySummary/>
-      </el-col>
-      <el-col :lg="8">
+      </i-col>
+      <i-col :lg="8">
         <PercentCount/>
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :lg="16">
+      </i-col>
+    </Row>
+    <Row>
+      <i-col :lg="16">
         <OrderLists></OrderLists>
-      </el-col>
-      <el-col :lg="8">
+      </i-col>
+      <i-col :lg="8">
         amountCount
-      </el-col>
-    </el-row>
-    <el-row>
-      <el-col :lg="16">
-        <el-row :gutter="1">
-          <el-col  :lg={span:4,offset:prod.offset} v-for="prod in productLists" :key="prod.id">
+      </i-col>
+    </Row>
+    <Row>
+      <i-col :lg="16">
+        <Row :gutter="1">
+          <i-col  :lg={span:4,offset:prod.offset} v-for="prod in productLists" :key="prod.id">
             <Products :pName='prod.name' :chartConfig="prod.chartConfig"/>
-          </el-col>
-        </el-row>
-      </el-col>
-      <el-col :lg="8">
+          </i-col>
+        </Row>
+      </i-col>
+      <i-col :lg="8">
         sellersCount
-      </el-col>
-    </el-row>
+      </i-col>
+    </Row>
 
 
 

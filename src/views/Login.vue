@@ -1,17 +1,21 @@
 <template>
   <div class="loginBody">
 
-      <el-form ref="form"  class="signin" label-width="80px">
-        <el-form-item label="用户名">
-          <el-input  placeholder="请输入用户名" v-model="username"></el-input>
-        </el-form-item>
-        <el-form-item label="密码">
-          <el-input  placeholder="请输入密码" v-model="password"></el-input>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" @click="onSubmit">立即登录</el-button>
-        </el-form-item>
-      </el-form>
+    <Form ref="formInline" :model="formInline" :rules="ruleInline" inline class="signin">
+      <FormItem prop="user">
+        <Input type="text" v-model="formInline.user" placeholder="Username">
+        <Icon type="ios-person-outline" slot="prepend"></Icon>
+        </Input>
+      </FormItem>
+      <FormItem prop="password">
+        <Input type="password" v-model="formInline.password" placeholder="Password">
+        <Icon type="ios-lock-outline" slot="prepend"></Icon>
+        </Input>
+      </FormItem>
+      <FormItem>
+        <Button type="primary" @click="handleSubmit('formInline')">Signin</Button>
+      </FormItem>
+    </Form>
 
   </div>
 
@@ -19,39 +23,61 @@
 
 <script>
   import axios from 'axios';
+  let sha1 = require("sha1");
     export default {
         data() {
             return {
-              username:"",
-              password:""
+              formInline: {
+                user: '',
+                password: ''
+              },
+              ruleInline: {
+                user: [
+                  { required: true, message: 'Please fill in the user name', trigger: 'blur' }
+                ],
+                password: [
+                  { required: true, message: 'Please fill in the password.', trigger: 'blur' },
+                  { type: 'string', min: 4, message: 'The password length cannot be less than 4 bits', trigger: 'blur' }
+                ]
+              }
             }
         },
         methods: {
-          onSubmit() {
-            console.log('submit!');
-            console.log(this.password);
-            console.log(this.username);
-            let username = this.username;
-            let password = this.password;
-
-            /*ajax请求后端登录验证*/
-            axios.post('/user/checkLogin',{username:username,password:password})
-              .then(function (res) {
-                console.log(res);
-                if(res.code===200){
-                  //请求成功跳转至默认页
-                  this.$router.push({path: '/'});
-                }
-                else if(res.code===100){
-                 //请求失败
-                 console.log("err");
-                }
-              }).catch(function (err) {
-                console.log(err);
+          handleSubmit(name) {
+            this.$refs[name].validate((valid) => {
+              if (!valid) {
+                this.$Message.error('输入有误!');
+              }
             });
+            let self= this;
+            let pwd = sha1(self.formInline.password);
+            axios.get("/user/checkLogin",{params:{username:self.formInline.user,password:pwd}})
+              .then((data)=>{
+                // console.log(data);
+                if(data.data.code === 100){
+                  let avatar = data.data.extendInfo.avatar;
+                  sessionStorage.setItem('username',self.formInline.user);
+                  sessionStorage.setItem('avatar',avatar);
+                  sessionStorage.setItem('isLogin',"true");
+                  this.$emit("userLogin");
+                  this.$router.push("/");
 
 
+
+                }
+                else{
+                  console.log("login fail");
+                }
+              })
+              .catch((err)=>{
+                console.log(err);
+                this.$Message.error('登录错误!');
+              })
           }
+
+
+
+
         },
         created: function () {
 

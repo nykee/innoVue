@@ -1,12 +1,12 @@
 <template>
 
-  <el-row  id="main-container">
-    <el-row >
+  <Row  id="main-container">
+    <Row >
       <h1 id="title" class=" title " >XX医疗多中心展示</h1>
       <div class="defaultInfo ">
         <h3  class="mCenterDisc">XX医疗致力于关节功能多中心的建立，在北京上海广州香港等地均建立了多中心</h3>
       </div>
-    </el-row>
+    </Row>
     <div >
       <div class="" id="hosSel">
         <label for="hosSel">请选择你需要查看数据的医院或机构：</label>
@@ -25,11 +25,11 @@
         <b>或者点击下方的医院名称</b>
       </div>
     </div>
-    <el-row>
-      <el-col  :span="14" id="chart-container">
+    <Row>
+      <i-col  :span="14" id="chart-container">
         <!--<MCmapchart></MCmapchart>-->
-      </el-col>
-      <el-col id="mCenterInfo"  :span="8">
+      </i-col>
+      <i-col id="mCenterInfo"  :span="8">
 
         <div class="beijingInfo ">
           <b>XX医疗北京中心</b>
@@ -73,9 +73,9 @@
             </li>
           </ul>
         </div>
-      </el-col>
-    </el-row>
-  </el-row>
+      </i-col>
+    </Row>
+  </Row>
 
 </template>
 

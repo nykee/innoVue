@@ -5,15 +5,15 @@
       <el-breadcrumb-item>{{name}}</el-breadcrumb-item>
     </el-breadcrumb>
 
-    <el-row>
-      <el-col :span="4" class="hosLogoCol"><img :src="imgsrc" class="hosLogo" alt=""></el-col>
-      <el-col :span="20"><h2>{{name}}</h2></el-col>
-    </el-row>
-    <el-row>
-      <el-col>
+    <Row>
+      <i-col :span="4" class="hosLogoCol"><img :src="imgsrc" class="hosLogo" alt=""></i-col>
+      <i-col :span="20"><h2>{{name}}</h2></i-col>
+    </Row>
+    <Row>
+      <i-col>
           <p class="hosDesc">{{desc}}</p>
-      </el-col>
-    </el-row>
+      </i-col>
+    </Row>
   </div>
 </template>
 

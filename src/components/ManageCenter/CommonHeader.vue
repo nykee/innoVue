@@ -1,14 +1,14 @@
 <template>
-  <el-row>
-    <el-col
+  <Row>
+    <i-col
       :xs="8" :sm="6" :md="4" :lg={span:10} :xl={span:10} >
       <h2>{{title}}</h2>
-    </el-col>
-    <el-col
+    </i-col>
+    <i-col
       :xs="8" :sm="6" :md="4" :lg={span:1,offset:13} :xl={span:1,offset:13}  >
       <i :class=iconName></i>
-    </el-col>
-  </el-row>
+    </i-col>
+  </Row>
 </template>
 
 <script>

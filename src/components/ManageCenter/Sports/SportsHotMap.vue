@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="manage-page-subview-container">
     <!--<h2>运动学热力图</h2>-->
     <CommonHeader title="运动学热力图" iconName="fa fa-magic fa-2x"/>
     <!--<polar></polar>-->

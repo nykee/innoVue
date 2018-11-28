@@ -2,15 +2,25 @@
   <div class="main-content ">
 
     <!--轮播-->
-    <el-carousel height="394px" indicator-position="outside" >
-      <el-carousel-item v-for="item in items" :key="item.id"  >
+    <!--<el-carousel height="394px" indicator-position="outside" >-->
+      <!--<el-carousel-item v-for="item in items" :key="item.id"  >-->
+        <!--<div style="position: relative">-->
+          <!--<img :src="item.src" alt="">-->
+          <!--<h2>{{item.title}}</h2>-->
+          <!--<h3>{{ item.desc }}</h3>-->
+        <!--</div>-->
+      <!--</el-carousel-item>-->
+    <!--</el-carousel>-->
+    <Carousel v-model="carouselIndex" loop autoplay dots="outside" autoplay-speed="5000">
+      <CarouselItem v-for="item in items" :key="item.id" style="height: 400px">
         <div style="position: relative">
           <img :src="item.src" alt="">
           <h2>{{item.title}}</h2>
           <h3>{{ item.desc }}</h3>
         </div>
-      </el-carousel-item>
-    </el-carousel>
+      </CarouselItem>
+
+    </Carousel>
 
     <!--平台简介-->
     <div class=" funcZone">
@@ -21,62 +31,62 @@
       <!--平台功能-->
       <div id="platformFunction" class="platformFunction">
         <!--功能图标-->
-        <el-row  type="flex" class="row-bg functionName" justify="space-around">
-              <el-col :span="6" >
+        <Row  type="flex" class="row-bg functionName" justify="space-around">
+              <i-col :span="6" >
                   <a id="yjs"  @click="calDetailToggle()">
                     <div class="funcImg" ></div>
                     <div class="funcTitle myActive" >云计算</div>
                   </a>
-              </el-col>
-              <el-col :span="6" >
+              </i-col>
+              <i-col :span="6" >
                   <a id="ycc" @click="storeDetailToggle()">
                     <div class="funcImg" ></div>
                     <div class="funcTitle" >云存储</div>
                   </a>
-              </el-col>
-              <el-col :span="6"  >
+              </i-col>
+              <i-col :span="6"  >
                   <a id="sjwl" @click="neuralDetailToggle()">
                     <div class="funcImg" ></div>
                     <div class="funcTitle" >神经网络</div>
                   </a>
-              </el-col>
-          </el-row>
+              </i-col>
+          </Row>
 
 
         <div class="functionDetail">
           <!--云计算详情-->
-          <el-row id="calDetail" v-if="calDetailShow" >
+          <Row id="calDetail" v-if="calDetailShow" >
 
-              <el-col :span="6"  class="funcDescCol" >
+              <i-col :span="6"  class="funcDescCol" >
                <span class="">云计算提供了最可靠、最安全的数据存储中心</span><s>&gt;</s>
-              </el-col>
-               <el-col :span="6" class="funcDescCol">
+              </i-col>
+               <i-col :span="6" class="funcDescCol">
                  <span class="">云计算对用户端的设备要求最低</span><s>&gt;</s>
-               </el-col>
-               <el-col :span="6" class="funcDescCol">
+               </i-col>
+               <i-col :span="6" class="funcDescCol">
                  <span>增强的计算能力</span><s>&gt;</s>
-               </el-col>
-               <el-col :span="6" class="funcDescCol">
+               </i-col>
+               <i-col :span="6" class="funcDescCol">
                  <span>无限的存储容量</span><s>&gt;</s>
-               </el-col>
+               </i-col>
 
-          </el-row>
+          </Row>
           <!--云存储详情-->
-          <el-row id="storeDetail"  v-if="storeDetailShow" >
+          <Row id="storeDetail"  v-if="storeDetailShow" >
 
-              <el-col :span="8" class="funcDescCol"><span>存储管理自动化、智能化，所有的存储资源被整合到一起</span><s>&gt;</s></el-col>
-              <el-col :span="8" class="funcDescCol"><span>提高存储效率、提高了存储空间的利用率，同时具备负载均衡、故障冗余功能</span><s>&gt;</s></el-col>
-              <el-col :span="8" class="funcDescCol"><span>实现规模效应和弹性扩展，降低运营成本，避免资源浪费</span><s>&gt;</s></el-col>
+              <i-col :span="8" class="funcDescCol"><span>存储管理自动化、智能化，所有的存储资源被整合到一起</span><s>&gt;</s></i-col>
+              <i-col :span="8" class="funcDescCol"><span>提高存储效率、提高了存储空间的利用率，同时具备负载均衡、故障冗余功能</span><s>&gt;</s></i-col>
+              <i-col :span="8" class="funcDescCol"><span>实现规模效应和弹性扩展，降低运营成本，避免资源浪费</span><s>&gt;</s></i-col>
 
-          </el-row>
+          </Row>
           <!--神经网络详情-->
-          <el-row id="neuralDetail " v-if="neuralDetailShow" >
+          <Row id="neuralDetail " v-if="neuralDetailShow" >
 
-              <el-col :span="8" class="funcDescCol"><span>自学习功能</span><s>&gt;</s></el-col>
-              <el-col :span="8" class="funcDescCol"><span>联想存储功能</span><s>&gt;</s></el-col>
-              <el-col :span="8" class="funcDescCol"><span>高速寻找优化解的能力</span><s>&gt;</s></el-col>
+              <i-col :span="8" class="funcDescCol"><span>自学习功能</span><s>&gt;</s></i-col>
+              <i-col :span="8" class="funcDescCol"><span>联想存储功能</span><s>&gt;</s></i-col>
+              <i-col :span="8" class="funcDescCol"><span>高速寻找优化解的能力</span><s>&gt;</s></i-col>
 
-          </el-row>
+          </Row>
         </div>
       </div>
       <!--平台解决方案-->
@@ -85,75 +95,75 @@
         <div class="marketDesc">
           <h3 class=" ">精确定位，发散市场，XX云能为各种类型的市场提供服务</h3>
         </div>
-        <el-row type="flex" class="row-bg" justify="space-around">
-          <el-col :span="6">
+        <Row type="flex" class="row-bg" justify="space-around">
+          <i-col :span="6">
             <div>
               <img src="static/images/index/ky.png" alt=""/>
             </div>
             <a href="javascript:void 0" class="marketTitle" style="color:#000"><span>科研评估</span></a>
-          </el-col>
-          <el-col :span="6">
+          </i-col>
+          <i-col :span="6">
             <div>
               <img src="static/images/index/kf.png" alt=""/>
             </div>
             <a href="javascript:void 0" class="marketTitle" style="color:#000"><span>关节康复</span></a>
-          </el-col>
-          <el-col :span="6">
+          </i-col>
+          <i-col :span="6">
             <div>
               <img src="static/images/index/mz.png" alt="">
             </div>
             <a href="javascript:void 0" class="marketTitle" style="color:#000"><span>门诊辅助</span></a>
-          </el-col>
-        </el-row>
-        <el-row type="flex" class="row-bg" justify="space-around">
-          <el-col :span="6">
+          </i-col>
+        </Row>
+        <Row type="flex" class="row-bg" justify="space-around">
+          <i-col :span="6">
             <div>
               <img src="static/images/index/yd.png" alt="">
             </div>
             <a href="javascript:void 0" class="marketTitle" style="color:#000"><span>运动训练</span></a>
-          </el-col>
-          <el-col :span="6">
+          </i-col>
+          <i-col :span="6">
             <div>
               <img src="static/images/index/js.png" alt="">
             </div>
             <a href="javascript:void 0" class="marketTitle" style="color:#000"><span>军事训练</span></a>
-          </el-col>
-          <el-col :span="6">
+          </i-col>
+          <i-col :span="6">
             <div>
               <img src="static/images/index/tj.png" alt="">
             </div>
             <a href="javascript:void 0" class="marketTitle" style="color:#000"><span>体检项目</span></a>
-          </el-col>
-        </el-row>
+          </i-col>
+        </Row>
 
       </div>
       <!--分割线-->
       <div class="line"></div>
       <!--XX多中心显示chart-->
       <div id="map" >
-        <el-row justify="center" type="flex" class="row-bg">
+        <Row justify="center" type="flex" class="row-bg">
 
-         <el-col :span="6">
+         <i-col :span="6">
            <h3 >XX云分布全国的骨科中心--数据更可靠</h3>
-         </el-col>
-        </el-row >
-        <el-row justify="center" type="flex" class="row-bg">
-          <el-col :span="12">
+         </i-col>
+        </Row >
+        <Row justify="center" type="flex" class="row-bg">
+          <i-col :span="12">
               <!--地图chart,组件引入-->
             <MapChart></MapChart>
-          </el-col>
-        </el-row>
+          </i-col>
+        </Row>
 
 
       </div>
       <!--立刻注册按钮及点击查看多中心按钮-->
-      <el-row id="regNowRow"  type="flex" justify="center">
-          <el-col :span="8">
+      <Row id="regNowRow"  type="flex" justify="center">
+          <i-col :span="8">
             <router-link to="/Mcenter" class="RR-btn"><span class="regNowRow_btn"  id="regNow_2mcenter">查看XX多中心</span></router-link>
             <router-link to="/Register" class="RR-btn"><span class="regNowRow_btn" id="regNowRow_regbtn" >免费注册</span></router-link>
             <router-link to="/Login" class="RR-btn"><span class="regNowRow_btn" id="regNowRow_loginbtn" >立刻登录</span></router-link>
-          </el-col>
-      </el-row>
+          </i-col>
+      </Row>
 
 
     </div>
@@ -176,6 +186,7 @@
             calDetailShow:true,
             storeDetailShow:false,
             neuralDetailShow:false,
+            carouselIndex:0
           }
 
         },

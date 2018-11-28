@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <h4 style="color: #fff">Monthly Summary</h4>
     <LineChart :LineConfig="LineConfig"/>
   </div>

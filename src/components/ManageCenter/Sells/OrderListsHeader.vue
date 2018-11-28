@@ -1,11 +1,11 @@
 <template>
 
-    <el-row >
-      <el-col :lg="6" v-for="{title,index} in titles" :key="index">
+    <Row >
+      <i-col :lg="6" v-for="{title,index} in titles" :key="index">
         {{title}}
-      </el-col>
+      </i-col>
 
-    </el-row>
+    </Row>
 
 
 </template>
