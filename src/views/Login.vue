@@ -22,7 +22,6 @@
 </template>
 
 <script>
-  import axios from 'axios';
   let sha1 = require("sha1");
     export default {
         data() {
@@ -51,7 +50,7 @@
             });
             let self= this;
             let pwd = sha1(self.formInline.password);
-            axios.get("/user/checkLogin",{params:{username:self.formInline.user,password:pwd}})
+            this.$http.get("/user/checkLogin",{params:{username:self.formInline.user,password:pwd}})
               .then((data)=>{
                 // console.log(data);
                 if(data.data.code === 100){
@@ -107,11 +106,5 @@
     height: 43.75rem;
     position: relative;
   }
-  /*html{
-    background: url('../../static/images/Index_bg2.jpg') no-repeat;
 
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-  }*/
 </style>

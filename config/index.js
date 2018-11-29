@@ -27,19 +27,41 @@ module.exports = {
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {
-      '/user/fetchAgeData': {
-        target: 'http://localhost:8081/',
-        changeOrigin: true, },
-      "/queryPatient":{
-        target: 'http://localhost:8081/',
-        changeOrigin: true,
-      },
-      "/user/checkLogin":{
-        target: 'http://localhost:8081/',
-        changeOrigin: true,
-      },
+    changeOriginCfg :{
+      target: 'http://localhost:8081/',
+      changeOrigin: true
     },
+    proxyTable: {
+      '/user/fetchAgeData':{
+      target: 'http://localhost:8081/',
+      changeOrigin: true
+    },
+      '/user/fetchTypeData':{
+      target: 'http://localhost:8081/',
+      changeOrigin: true
+    },
+      '/user/fetchGenderData':{
+      target: 'http://localhost:8081/',
+      changeOrigin: true
+    },
+      '/user/fetchMonthData2016':{
+      target: 'http://localhost:8081/',
+      changeOrigin: true
+    },
+      "/queryPatient":{
+      target: 'http://localhost:8081/',
+      changeOrigin: true
+    },
+      "/user/checkLogin":{
+      target: 'http://localhost:8081/',
+      changeOrigin: true
+    },
+      "/file/upload":{
+      target: 'http://localhost:8081/',
+      changeOrigin: true
+    },
+      },
+
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
     // (https://github.com/webpack/css-loader#sourcemaps)
@@ -48,4 +70,4 @@ module.exports = {
     cssSourceMap: false
   },
   host: 'localhost',
-}
+};

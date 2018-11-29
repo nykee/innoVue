@@ -65,7 +65,7 @@
   footer{
     width:100%;
     background:#027bbb;
-    padding-bottom:30px;
+    padding-bottom:.5rem;
     float: left;
     color:#A0DEFF;
   }

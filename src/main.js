@@ -3,17 +3,20 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import ElementUI from 'element-ui';
-import ECharts from 'vue-echarts/components/ECharts'
+// import ElementUI from 'element-ui';
+// import ECharts from 'vue-echarts/components/ECharts'
 import 'element-ui/lib/theme-chalk/index.css'
 import "font-awesome/css/font-awesome.min.css"
 import iView from 'iview';
 import 'iview/dist/styles/iview.css';
+import axios from 'axios';
+
+Vue.prototype.$http = axios;
 
 //
-Vue.use(ElementUI);
+// Vue.use(ElementUI);
 Vue.use(iView);
-Vue.component('chart', ECharts);
+// Vue.component('chart', ECharts);
 
 
 Vue.config.productionTip = false;

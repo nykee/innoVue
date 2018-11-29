@@ -1,5 +1,5 @@
 <template>
-    <Row  class="navBar" v-show="!isLoginPage">
+    <Row  class="navBar" v-show="!isLoginPage" type="flex" justify="center" align="middle">
       <i-col span="2">
         <h2 class="fl pic"><router-link to="/"><img src="../../static/images/nykeeLogo.png" alt=""></router-link></h2>
       </i-col>
@@ -20,7 +20,7 @@
         </Menu>
       </i-col>
       <i-col span="2" >
-        <Button type="primary" @click="login" v-if="!isLogin">登录</Button>
+        <router-link  to="/Login" v-if="!isLogin" class="RR-btn"><span class="regNowRow_btn" id="regNowRow_loginbtn" >立刻登录</span></router-link>
         <UserAvatar v-if="isLogin"/>
       </i-col>
     </Row>

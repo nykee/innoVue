@@ -21,13 +21,13 @@
           <option value="HNLG">华南理工大学</option>
           <option value="XGZW">香港威尔士亲王医院</option>
         </select>
-        <el-button type="primary"  @click="linkToHosp">前往</el-button>
+        <Button type="primary"  @click="linkToHosp">前往</Button>
         <b>或者点击下方的医院名称</b>
       </div>
     </div>
     <Row>
-      <i-col  :span="14" id="chart-container">
-        <!--<MCmapchart></MCmapchart>-->
+      <i-col  :span="14" >
+        <McMapChart></McMapChart>
       </i-col>
       <i-col id="mCenterInfo"  :span="8">
 
@@ -80,7 +80,7 @@
 </template>
 
 <script>
-  // import MCmapchart from '../components/charts/MCmapchart.vue';
+  import McMapChart from '../components/McMapChart';
     export default {
         data() {
           return{
@@ -96,7 +96,7 @@
 
         },
         components: {
-          // MCmapchart
+          McMapChart
         }
     }
 </script>

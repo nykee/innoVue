@@ -7,7 +7,7 @@
         <div class="menuBG">
 
 
-          <Menu theme="light" accordion style="width: auto!important;" active-name="1-2" open-names="1">
+          <Menu theme="light" accordion style="width: auto!important;" active-name="1-2" :open-names="openNames">
             <Submenu name="1">
               <template slot="title">
                 <Icon type="ios-paper" />
@@ -72,6 +72,7 @@
         data() {
           return{
             isCollapse: false,
+            openNames:["1"]
           }
         },
         methods: {

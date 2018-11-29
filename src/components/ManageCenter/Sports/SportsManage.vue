@@ -22,7 +22,7 @@
 
 <script>
   import CommonHeader from '../CommonHeader'
-  import axios from 'axios'
+  // import axios from 'axios'
     export default {
         data() {
             return {
@@ -137,7 +137,7 @@
       mounted(){
 
 
-          axios.get("/queryPatient",{params: {username:"inno"}})
+          this.$http.get("/queryPatient",{params: {username:"inno"}})
             .then((data)=>{
                 let len= this.total = data.data.length;
                 this.dataAll =data.data;

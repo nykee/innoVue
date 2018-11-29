@@ -1,5 +1,5 @@
 <template>
-  <chart
+  <charts
     :options="mapConfig"
     ref="map"
     auto-resize
@@ -22,7 +22,7 @@
 
         },
         components: {
-          chart: ECharts
+          charts: ECharts
         }
     }
 </script>

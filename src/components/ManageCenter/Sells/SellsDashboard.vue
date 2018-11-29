@@ -1,3 +1,4 @@
+<!--
 <template>
   <div class="sells-dash-container manage-page-subview-container">
     <CommonHeader title="销售监控dashboard" iconName="fa fa-magic fa-2x" style="color:#fff"/>
@@ -89,3 +90,4 @@
     background: #2F323A;
   }
 </style>
+-->

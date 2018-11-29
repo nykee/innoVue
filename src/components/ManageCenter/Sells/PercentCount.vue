@@ -1,3 +1,4 @@
+<!--
 <template>
   <DPie :DPieConfig="DPieConfig" style="height: 18.75rem;width: 18.75rem"/>
 </template>
@@ -130,3 +131,4 @@
 <style>
 
 </style>
+-->

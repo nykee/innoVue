@@ -1,12 +1,14 @@
 <template>
-  <Map :mapConfig="mapConfig"></Map>
+  <div id="chart-container-mc" style="width: 400px;height: 400px"></div>
 </template>
 
 <script>
-  import ECharts from 'vue-echarts/components/ECharts'
-  import Map from '../vue-echarts/Map';
-  import chinaMap from '../../store/china.json'
-  ECharts.registerMap('china', chinaMap);
+  import echarts from 'echarts'
+  require("echarts/chart/map");
+  require("echarts/util/mapData/geoJson/china_geo");
+  // let map=require("../../store/china");
+  // import chinaMap from '../../store/china.json'
+  // ECharts.registerMap('china', chinaMap);
     export default {
         data() {
             return {
@@ -133,9 +135,10 @@
 
         },
         mounted() {
-
+          let chart = echarts.init(document.getElementById('chart-container-mc'));
+          chart.setOption(this.mapConfig,true);
         },
-        components: {Map}
+        components: {}
     }
 </script>
 <style>

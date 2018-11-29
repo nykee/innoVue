@@ -6,14 +6,14 @@
     <router-view></router-view>
     <!--页脚-->
     <FootBar></FootBar>
-    <BackToTopBtn class="toTopBtn" v-show="isToTop" ></BackToTopBtn>
+    <!--<BackToTopBtn class="toTopBtn" v-show="isToTop" ></BackToTopBtn>-->
   </div>
 </template>
 
 <script>
   import FootBar from "./components/FootBar.vue";
   import Navbar from "./components/NavBar.vue";
-  import BackToTopBtn from './components/BackToTopBtn.vue';
+  // import BackToTopBtn from './components/BackToTopBtn.vue';
 export default {
   data(){
     return {
@@ -48,7 +48,7 @@ export default {
     '$route':'chkIndex'
   },
   components:{
-    FootBar,Navbar,BackToTopBtn
+    FootBar,Navbar
   }
 
 }
@@ -103,7 +103,11 @@ li{list-style-type:none;}
 .clearfix{*zoom:1}
 .clearfix:after{display:block;visibility:hidden;clear:both;height:0;content:'.';font-size:0}
 
-
+.flex-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 </style>
