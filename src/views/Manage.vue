@@ -7,7 +7,7 @@
         <div class="menuBG">
 
 
-          <Menu theme="light" accordion style="width: auto!important;">
+          <Menu theme="light" accordion style="width: auto!important;" active-name="1-2" open-names="1">
             <Submenu name="1">
               <template slot="title">
                 <Icon type="ios-paper" />

@@ -13,10 +13,10 @@
     <!--</el-carousel>-->
     <Carousel v-model="carouselIndex" loop autoplay dots="outside" autoplay-speed="5000">
       <CarouselItem v-for="item in items" :key="item.id" style="height: 400px">
-        <div style="position: relative">
+        <div style="position: relative;color:#fff">
           <img :src="item.src" alt="">
-          <h2>{{item.title}}</h2>
-          <h3>{{ item.desc }}</h3>
+          <h2 class="carousel-info-title">{{item.title}}</h2>
+          <h3 class="carousel-info-desc">{{ item.desc }}</h3>
         </div>
       </CarouselItem>
 
@@ -415,7 +415,11 @@
     top: 25%;
     right: 1%;
   }
-
+  .carousel-info-title,.carousel-info-desc{
+    position: absolute;
+  }
+  .carousel-info-title{top:56%;left:47%}
+  .carousel-info-desc{top:60%;left:42%}
 
 
 </style>
